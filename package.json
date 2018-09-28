@@ -1,0 +1,23 @@
+{
+  "name": "hepialight-blockly",
+  "version": "1.0.0",
+  "description": "Block based web app for the [HEPIA](http://hepia.hesge.ch) education board [hepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiosousa/hepialight-blockly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiosousa/hepialight-blockly/issues"
+  },
+  "homepage": "https://github.com/claudiosousa/hepialight-blockly#readme",
+  "dependencies": {
+    "blockly": "github:google/blockly",
+    "code-prettify": "github:google/code-prettify"
+  }
+}
