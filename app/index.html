@@ -10,16 +10,20 @@
 
 <body>
 
-    <div id="blocklyContainer" style="height: 480px;"></div>
-    <pre id="codeOutput" class="content" style="height: 480px;"></pre>
+    <div id="blocklyContainer"></div>
+    <pre id="codeOutput" class="content"></pre>
+    <div id="ctrlPanel">
+        <button id="downloadBtn">Download</button>
+    </div>
 
-
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/code-prettify/loader/run_prettify.js"></script>
-
     <script src="../node_modules/blockly/blockly_compressed.js"></script>
     <script src="../node_modules/blockly/blocks_compressed.js"></script>
     <script src="../node_modules/blockly/msg/js/en.js"></script>
     <script src="../node_modules/blockly/python_compressed.js"></script>
+
+    <script src="../node_modules/lodash/lodash.js"></script>
 
     <script src="app.js" type="module"></script>
 

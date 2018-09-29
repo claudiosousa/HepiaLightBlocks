@@ -1,4 +1,7 @@
 const toolbox = `<xml id="toolbox" style="display: none">
+<category name="HEPIALight" colour="0">
+  <block type="allumer_led"></block>
+</category>
 <category name="Logic" colour="%{BKY_LOGIC_HUE}">
   <category name="If">
     <block type="controls_if"></block>

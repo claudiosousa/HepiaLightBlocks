@@ -28,6 +28,7 @@ module.exports = {
     },
     "globals": {
         "Blockly": false,
-        'PR': false
+        'PR': false,
+        "_": false
     }
 };

@@ -1,10 +1,10 @@
-import BlocklyController from './blockly/BlocklyController.js';
-import blocklyConfig from './blockly/BlocklyConfig.js';
-import PythonWidget from './python/PythonWidget.js';
+import BlocklyController from './blockly/index.js';
+import PythonWidget from './python/Widget.js';
 
-const blocklyContainer = document.getElementById('blocklyContainer');
-const blocklyCtrl = new BlocklyController(blocklyContainer, blocklyConfig);
+const blocklyCtrl = new BlocklyController($('#blocklyContainer')[0]);
 
-const codeOutput = document.getElementById('codeOutput');
-const pythonWidget = new PythonWidget(codeOutput, blocklyCtrl);
+const pythonWidget = new PythonWidget($('#codeOutput')[0], blocklyCtrl);
+
+
+$('#downloadBtn').click(() => pythonWidget.download());
 

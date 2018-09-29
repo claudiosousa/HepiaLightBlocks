@@ -14,5 +14,5 @@ npm i -g http-server # Install a http server
 Run the http server:
 ```bash
 # Run the http server
-http-server . -a 0.0.0.0 -p 8765 -o http://127.0.0.1:8765/app/
+npm start
 ```
