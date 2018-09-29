@@ -1,5 +1,5 @@
 import './custom-blocks.js';
-import './custom-field.js';
+
 
 `
     <block type="controls_if">

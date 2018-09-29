@@ -1,3 +1,5 @@
+import { default as LEDImage } from './custom-field.js';
+
 const COLUMNS = 10, LINES = 10;
 
 const custom_blocks = {
@@ -7,11 +9,11 @@ const custom_blocks = {
             this.appendDummyInput()
                 .appendField('Image LED');
             this.appendDummyInput()
-                .appendField(new Blockly.FieldImage2("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, "*"));
-            this.setInputsInline(true);
+                .appendField(new LEDImage("https://www.gstatic.com/codesite/ph/images/star_on.gif", 15, 15, "*"));
+            this.setInputsInline(false);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
-            this.setColour(0);
+            this.setColour(207);
             this.setTooltip('Image LED');
             this.setHelpUrl('');
         }
