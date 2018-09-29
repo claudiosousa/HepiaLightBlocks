@@ -1,10 +1,7 @@
-const toolbox = `<xml id="toolbox" style="display: none">
-<category name="HEPIALight" colour="0">
-  <block type="allumer_led"></block>
-</category>
-<category name="Logic" colour="%{BKY_LOGIC_HUE}">
-  <category name="If">
-    <block type="controls_if"></block>
+import './custom-blocks.js';
+import './custom-field.js';
+
+`
     <block type="controls_if">
       <mutation else="1"></mutation>
     </block>
@@ -21,16 +18,8 @@ const toolbox = `<xml id="toolbox" style="display: none">
     <block type="logic_ternary"></block>
   </category>
 </category>
-<category name="Loops" colour="%{BKY_LOOPS_HUE}">
-  <block type="controls_repeat_ext">
-    <value name="TIMES">
-      <block type="math_number">
-        <field name="NUM">10</field>
-      </block>
-    </value>
-  </block>
-  <block type="controls_whileUntil"></block>
-  <block type="controls_for">
+
+<block type="controls_for">
     <field name="VAR">i</field>
     <value name="FROM">
       <block type="math_number">
@@ -312,24 +301,94 @@ const toolbox = `<xml id="toolbox" style="display: none">
 </category>
 </xml>`;
 
+const toolbox = [
+  {
+    name: 'Ecran',
+    color: 0,
+    blocks: [
+      'led_image',
+      'allumer_led',
+      'eteindre_led'
+    ]
+  },
+  {
+    name: 'Logique',
+    color: '%{BKY_LOGIC_HUE}',
+    blocks: [
+      'controls_if'
+    ]
+  },
+  {
+    name: 'Boucles',
+    color: '%{BKY_LOOPS_HUE}',
+    blocks: [
+      'controls_whileUntil',
+      {
+        type: 'controls_repeat_ext', value: {
+          name: 'TIMES',
+          block: {
+            type: 'math_number',
+            field: {
+              name: 'NUM',
+              text: 10
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    name: 'Delai',
+    color: '40',
+    blocks: [
+      'attendre_s',
+      'attendre_ms'
+    ]
+  }
+];
+
+
+const build = {
+
+  children: p => _(p).map((v, k) => build[k] ? build[k](v) : null)
+    .values()
+    .filter(v => v)
+    .join(''),
+
+  text: v => v,
+  field: v => `<field name="${v.name}">${build.children(v)}</field>`,
+  value: v => `<value name="${v.name}">${build.children(v)}</value>`,
+  block: b => {
+    if (typeof (b) == 'string')
+      return `<block type="${b}"></block>`;
+    else
+      return `<block type="${b.type}">${build.children(b)}</block>`;
+  },
+  category: c => `<category name="${c.name}" colour="${c.color}">${c.blocks.map(build.block)}</category>`,
+  toolbox: categories => `<xml>${categories.map(build.category)}</xml>`
+}
+
+// let tb = build.toolbox(toolbox);
+// console.log(tb);
+
 export default {
-    media: '../node_modules/blockly/media/',
-    toolbox: toolbox,
-    zoom:
-    {
-        controls: true,
-        wheel: true,
-        startScale: 1.0,
-        maxScale: 3,
-        minScale: 0.3,
-        scaleSpeed: 1.2
-    },
-    grid:
-    {
-        spacing: 25,
-        length: 3,
-        colour: '#ccc',
-        snap: true
-    },
-    trashcan: true
+  media: '../node_modules/blockly/media/',
+  toolbox: build.toolbox(toolbox),
+  zoom:
+  {
+    controls: true,
+    wheel: true,
+    startScale: 1.0,
+    maxScale: 3,
+    minScale: 0.3,
+    scaleSpeed: 1.2
+  },
+  grid:
+  {
+    spacing: 25,
+    length: 3,
+    colour: '#ccc',
+    snap: true
+  },
+  trashcan: true
 };

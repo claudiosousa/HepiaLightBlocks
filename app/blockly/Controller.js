@@ -1,5 +1,4 @@
 import config from './Config.js';
-import './custom-blocks.js';
 
 export default class {
 
