@@ -17,6 +17,20 @@ body {
     grid-row: 2 / 3;
 }
 
+.image-led-field.blocklyEditableText:hover>rect {
+    stroke:none;
+    stroke-width: 0;
+}
+.image-led-field.blocklyEditableText>rect:hover {
+    stroke:red;
+    stroke-width: 1;
+}
+
+.image-led-field.blocklyEditableText>rect {
+    fill: #fff;
+    fill-opacity: .9;
+}
+
 #codeOutput {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
