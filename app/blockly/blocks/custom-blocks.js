@@ -1,4 +1,5 @@
-import { default as LEDImage } from './custom-field.js';
+import COLORS from './Colors.js'
+import { default as LEDImage } from './LEDImage.field.js';
 
 const COLUMNS = 10, LINES = 10;
 
@@ -6,8 +7,15 @@ const custom_blocks = {
 
     led_image: {
         init: function () {
+            const colors = _.map(COLORS, (v, k) => k);
+            const fieldColor = new Blockly.FieldColour(colors[0]);
+            fieldColor.setColours(colors);
+
             this.appendDummyInput()
                 .appendField('Image LED');
+            this.appendDummyInput()
+                .appendField('couleur')
+                .appendField(fieldColor, 'color');
             this.appendDummyInput()
                 .appendField(new LEDImage(), 'image');
             this.setInputsInline(false);
@@ -19,7 +27,14 @@ const custom_blocks = {
         },
         python: block => {
             const image = block.getFieldValue('image');
-            return `led_image('${image}')`;
+            let image_str = '"""'
+            for (let i = 0; i < 10; i++) {
+                image_str += "\n    ";
+                for (let j = 0; j < 10; j++)
+                    image_str += image[i * 10 + j];
+            }
+            image_str += '\n"""';
+            return `afficher_grille(${image_str})\n`;
         }
     },
 
@@ -73,7 +88,7 @@ const custom_blocks = {
             const x = block.getFieldValue('x');
             const y = block.getFieldValue('y');
             const color = block.getFieldValue('color');
-            return `allumer_led(${x}, ${y}, ${converRgbToNumber(color)})\n`;
+            return `allumer_led(${x}, ${y}, ${color})\n`;
         }
     },
 

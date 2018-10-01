@@ -1,4 +1,4 @@
-import './custom-blocks.js';
+import './blocks/custom-blocks.js';
 
 
 `

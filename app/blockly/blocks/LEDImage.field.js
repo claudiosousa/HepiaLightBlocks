@@ -1,13 +1,15 @@
 
 'use strict';
 
+import COLORS from './Colors.js'
 
 goog.provide('LEDImage');
-
 goog.require('Blockly.Field');
 goog.require('Blockly.utils');
-
 goog.require('goog.math.Size');
+
+const COLUMNS = 10;
+const LINES = 10;
 
 class LEDImage extends Blockly.Field {
 
@@ -32,14 +34,15 @@ class LEDImage extends Blockly.Field {
 
         this.sourceBlock_ = null;
 
-        this.height_ = 19 * 10;
-        this.width_ = 19 * 10;
+        this.height_ = 19 * LINES;
+        this.width_ = 19 * COLUMNS;
         this.size_ = new goog.math.Size(this.width_, this.height_ + 2 * Blockly.BlockSvg.INLINE_PADDING_Y);
         this.text_ = '';
         this.setValue('fancy image');
     }
 
     init() {
+        this.colorArray = Array(LINES * COLUMNS).fill('.');
         if (this.fieldGroup_) {
             // Image has already been initialized once.
             return;
@@ -49,6 +52,40 @@ class LEDImage extends Blockly.Field {
         this.fieldGroup_ = Blockly.utils.createSvgElement('g', {
             class: 'image-led-field'
         }, null);
+
+        this.getColor();
+
+        this.buildUI();
+
+        // Configure the field to be transparent with respect to tooltips.
+        this.setTooltip(this.sourceBlock_);
+        //Blockly.Tooltip.bindMouseEvents(this.imageElement_);
+
+        this.maybeAddClickHandler_();
+
+        this.updateEditable();
+        this.render_();
+    }
+
+    getColor() {
+        // try to find a color field in the block
+        if (this.colorField === undefined) {
+            this.colorField = null;
+            for (let input of this.sourceBlock_.inputList) {
+                for (let field of input.fieldRow) {
+                    if (field instanceof Blockly.FieldColour) {
+                        this.colorField = field;
+                        break;
+                    }
+                }
+            }
+        }
+        if (!this.colorField)
+            return '#ff0000';
+        return this.colorField.getValue();
+    }
+
+    buildUI() {
         Blockly.utils.addClass(this.fieldGroup_, 'image-led-field');
         if (!this.visible_) {
             this.fieldGroup_.style.display = 'none';
@@ -56,12 +93,13 @@ class LEDImage extends Blockly.Field {
         /** @type {SVGElement} */
         for (let y = 0; y < 10; y++)
             for (let x = 0; x < 10; x++)
-                this.imageElement_ = Blockly.utils.createSvgElement(
+                Blockly.utils.createSvgElement(
                     'rect',
                     {
                         transform: `translate(${x * 19}, ${y * 19})`,
                         class: 'image-led-pixel',
                         'pixel-on': false,
+                        index: y * 10 + x,
                         height: 15,
                         width: 15,
                         fill: '#A0C9F0',
@@ -69,18 +107,8 @@ class LEDImage extends Blockly.Field {
                     },
                     this.fieldGroup_);
 
-        // this.setValue(123);
         this.sourceBlock_.getSvgRoot().appendChild(this.fieldGroup_);
-
-        // Configure the field to be transparent with respect to tooltips.
-        this.setTooltip(this.sourceBlock_);
-        Blockly.Tooltip.bindMouseEvents(this.imageElement_);
-
-        this.maybeAddClickHandler_();
-
-        this.updateEditable();
         this.sourceBlock_.getSvgRoot().appendChild(this.fieldGroup_);
-        this.render_();
     }
 
     maybeAddClickHandler_() {
@@ -91,23 +119,17 @@ class LEDImage extends Blockly.Field {
     isEditable() {
         return true;
     }
-    setValue(src) {
-        if (src === null) {
-            // No change if null.
+
+    setValue(colorArray) {
+        if (colorArray === null) {
             return;
         }
-        this.src_ = src;
 
-        // if (this.sourceBlock_ && Blockly.Events.isEnabled() &&
-        //     this.colour_ != colour) {
-        //     Blockly.Events.fire(new Blockly.Events.BlockChange(
-        //         this.sourceBlock_, 'field', this.name, this.colour_, colour));
-        // }
-        // this.colour_ = colour;
-        // if (this.borderRect_) {
-        //     this.borderRect_.style.fill = colour;
-        // }
-
+        if (this.sourceBlock_ && Blockly.Events.isEnabled()) {
+            Blockly.Events.fire(new Blockly.Events.BlockChange(
+                this.sourceBlock_, 'field', this.name, this.colorArray, colorArray));
+        }
+        this.colorArray = colorArray;
     }
 
     dispose() {
@@ -115,15 +137,13 @@ class LEDImage extends Blockly.Field {
             Blockly.utils.removeNode(this.fieldGroup_);
             this.fieldGroup_ = null;
         }
-        this.imageElement_ = null;
     }
 
     setTooltip(newTip) {
-        this.imageElement_.tooltip = newTip;
     }
 
     getValue() {
-        return this.src_;
+        return this.colorArray;
     }
 
     setText(alt) {
@@ -149,11 +169,22 @@ class LEDImage extends Blockly.Field {
         this.onClick_(window.event);
     }
 
+    updateColorArray(index, color) {
+        let colorArray = this.getValue();
+        colorArray[index] = color ? COLORS[color] : '.';
+        this.setValue(colorArray);
+    }
+
     onClick_(e) {
         var cell = e.target;
-        cell.style.fill = '#FF0000';
+        if (cell.className.baseVal != 'image-led-pixel')
+            return;
+        let fillColor = null;
+        if (!cell.style.fill)
+            fillColor = this.getColor();
+        cell.style.fill = fillColor;
 
-        //this.setValue(colour);
+        this.updateColorArray(Number(cell.attributes.index.value), fillColor);
     }
 }
 
