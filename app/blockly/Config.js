@@ -307,8 +307,30 @@ const toolbox = [
     color: 0,
     blocks: [
       'led_image',
-      'allumer_led',
-      'eteindre_led'
+      ...['allumer_led', 'eteindre_led']
+        .map(n => ({
+          type: n,
+          value: [{
+            name: 'y',
+            block: {
+              type: 'math_number',
+              field: {
+                name: 'NUM',
+                text: 0
+              }
+            }
+          },
+          {
+            name: 'x',
+            block: {
+              type: 'math_number',
+              field: {
+                name: 'NUM',
+                text: 0
+              }
+            }
+          }]
+        }))
     ]
   },
   {
@@ -324,7 +346,8 @@ const toolbox = [
     blocks: [
       'controls_whileUntil',
       {
-        type: 'controls_repeat_ext', value: {
+        type: 'controls_repeat_ext',
+        value: {
           name: 'TIMES',
           block: {
             type: 'math_number',
@@ -344,32 +367,53 @@ const toolbox = [
       'attendre_s',
       'attendre_ms'
     ]
-  }
+  },
+  {
+    name: 'Variables',
+    custom: 'VARIABLE',
+    color: '%{BKY_VARIABLES_HUE}'
+  },
 ];
 
 
 const build = {
 
-  children: p => _(p).map((v, k) => build[k] ? build[k](v) : null)
-    .values()
-    .filter(v => v)
-    .join(''),
+  children: p =>
+    _(p).map((v, k) => {
+      if (!build[k])
+        return null;
+      if (!Array.isArray(v))
+        v = [v]
+      return v.map(e => build[k](e));
+    })
+      .values()
+      .filter(v => v)
+      .join(''),
 
   text: v => v,
-  field: v => `<field name="${v.name}">${build.children(v)}</field>`,
-  value: v => `<value name="${v.name}">${build.children(v)}</value>`,
+  field: v => `<field name="${v.name}">${build.children(v)}</field>\n`,
+  value: v => `<value name="${v.name}">${build.children(v)}</value>\n`,
   block: b => {
     if (typeof (b) == 'string')
-      return `<block type="${b}"></block>`;
+      return `<block type="${b}"></block>\n`;
     else
-      return `<block type="${b.type}">${build.children(b)}</block>`;
+      return `<block type="${b.type}">
+                ${build.children(b)}
+              </block>\n`;
   },
-  category: c => `<category name="${c.name}" colour="${c.color}">${c.blocks.map(build.block)}</category>`,
-  toolbox: categories => `<xml>${categories.map(build.category)}</xml>`
+  category: c => `<category name="${c.name}"
+                          ${c.custom ? 'custom="' + c.custom + '"' : ''}
+                          colour="${c.color}">
+                            ${c.blocks ? c.blocks.map(build.block) : ''}
+                  </category>`,
+  toolbox: categories => `<xml>
+      ${categories.map(build.category)}
+    </xml>`
 }
 
-// let tb = build.toolbox(toolbox);
-// console.log(tb);
+let tb = build.toolbox(toolbox);
+console.log(tb);
+
 
 export default {
   media: '../node_modules/blockly/media/',

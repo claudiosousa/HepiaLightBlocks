@@ -8,7 +8,6 @@ Install dependencies:
 
 ```bash
 npm install          # Install npm dependencies
-npm i -g http-server # Install a http server
 ```
 
 Run the http server:

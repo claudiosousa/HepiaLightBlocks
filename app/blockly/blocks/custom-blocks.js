@@ -2,15 +2,14 @@ import COLORS from './Colors.js'
 import { default as LEDImage } from './LEDImage.field.js';
 
 const COLUMNS = 10, LINES = 10;
+const colors = _.map(COLORS, (v, k) => k);
 
 const custom_blocks = {
 
     led_image: {
         init: function () {
-            const colors = _.map(COLORS, (v, k) => k);
             const fieldColor = new Blockly.FieldColour(colors[0]);
             fieldColor.setColours(colors);
-
             this.appendDummyInput()
                 .appendField('Image LED');
             this.appendDummyInput()
@@ -42,12 +41,12 @@ const custom_blocks = {
         init: function () {
             this.appendDummyInput()
                 .appendField('eteindre LED');
-            this.appendDummyInput()
-                .appendField('ligne')
-                .appendField(new Blockly.FieldNumber(0, 0, LINES - 1), 'x');
-            this.appendDummyInput()
-                .appendField('colonne')
-                .appendField(new Blockly.FieldNumber(0, 0, COLUMNS - 1), 'y');
+            this.appendValueInput('y')
+                .setCheck("Number")
+                .appendField('ligne');
+            this.appendValueInput('x')
+                .setCheck("Number")
+                .appendField('colonne');
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
@@ -56,9 +55,10 @@ const custom_blocks = {
             this.setHelpUrl('');
         },
         python: block => {
-            const x = block.getFieldValue('x');
-            const y = block.getFieldValue('y');
-            return `allumer_led(${x}, ${y}, 0)\n`;
+            let y = Blockly.Python.valueToCode(block, 'y', 1);
+            let x = Blockly.Python.valueToCode(block, 'x', 2);
+
+            return `eteindre_led(${x}, ${y})\n`;
         }
     },
 
@@ -66,15 +66,15 @@ const custom_blocks = {
         init: function () {
             this.appendDummyInput()
                 .appendField('allumer LED');
-            this.appendDummyInput()
-                .appendField('ligne')
-                .appendField(new Blockly.FieldNumber(0, 0, LINES - 1), 'x');
-            this.appendDummyInput()
-                .appendField('colonne')
-                .appendField(new Blockly.FieldNumber(0, 0, COLUMNS - 1), 'y');
+            this.appendValueInput('y')
+                .setCheck("Number")
+                .appendField('ligne');
+            this.appendValueInput('x')
+                .setCheck("Number")
+                .appendField('colonne');
             this.appendDummyInput()
                 .appendField('couleur')
-                .appendField(new Blockly.FieldColour('#ff0000'), 'color');
+                .appendField(new Blockly.FieldColour(colors[0]), 'color');
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
@@ -85,10 +85,10 @@ const custom_blocks = {
         python: block => {
             const converRgbToNumber = rgb => parseInt(rgb.substr(1), 16);
 
-            const x = block.getFieldValue('x');
-            const y = block.getFieldValue('y');
+            let y = Blockly.Python.valueToCode(block, 'y', 1);
+            let x = Blockly.Python.valueToCode(block, 'x', 2);
             const color = block.getFieldValue('color');
-            return `allumer_led(${x}, ${y}, ${color})\n`;
+            return `allumer_led(${x}, ${y}, ${converRgbToNumber(color)})\n`;
         }
     },
 
