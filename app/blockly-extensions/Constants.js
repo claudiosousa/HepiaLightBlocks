@@ -1,4 +1,4 @@
-const COLORS = {
+export const COLORS_LETTERS = {
     "#A2142F": "R",
     "#0072BD": "B",
     "#D95319": "O",
@@ -8,4 +8,6 @@ const COLORS = {
     "#4DBEEE": "C",
     '#000000': "."
 };
-export default COLORS;
+
+export const COLUMNS = 10, LINES = 10;
+export const COLORS = _.map(COLORS_LETTERS, (v, k) => k);

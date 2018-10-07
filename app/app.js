@@ -1,5 +1,5 @@
-import BlocklyController from './blockly/index.js';
-import PythonWidget from './python/Widget.js';
+import { Controller as BlocklyController } from './blockly-designer/Controller.js';
+import { Widget as PythonWidget } from './code-editor/Widget.js';
 
 const blocklyCtrl = new BlocklyController($('#blocklyContainer')[0]);
 

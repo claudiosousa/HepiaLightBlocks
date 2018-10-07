@@ -1,6 +1,6 @@
 import download from '../tools/download.js';
 
-export default class PythonWidget {
+export class Widget {
 
     constructor(domContainer, blockly) {
 

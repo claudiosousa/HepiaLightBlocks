@@ -1,17 +1,14 @@
 
 'use strict';
 
-import COLORS from './Colors.js'
+import { COLORS_LETTERS, COLUMNS, LINES } from '../Constants.js'
 
-goog.provide('LEDImage');
+goog.provide('LedImageField');
 goog.require('Blockly.Field');
 goog.require('Blockly.utils');
 goog.require('goog.math.Size');
 
-const COLUMNS = 10;
-const LINES = 10;
-
-class LEDImage extends Blockly.Field {
+export default class LedImageField extends Blockly.Field {
 
     get EDITABLE() {
         return true;
@@ -23,10 +20,9 @@ class LEDImage extends Blockly.Field {
     static fromJson(options) {
         var src = Blockly.utils.replaceMessageReferences(options['src']);
         var width = Number(Blockly.utils.replaceMessageReferences(options['width']));
-        var height =
-            Number(Blockly.utils.replaceMessageReferences(options['height']));
+        var height = Number(Blockly.utils.replaceMessageReferences(options['height']));
         var alt = Blockly.utils.replaceMessageReferences(options['alt']);
-        return new LEDImage(src, width, height, alt);
+        return new LedImage(src, width, height, alt);
     }
 
     constructor() {
@@ -171,7 +167,7 @@ class LEDImage extends Blockly.Field {
 
     updateColorArray(index, color) {
         let colorArray = this.getValue();
-        colorArray[index] = color ? COLORS[color] : '.';
+        colorArray[index] = color ? COLORS_LETTERS[color] : '.';
         this.setValue(colorArray);
     }
 
@@ -188,6 +184,5 @@ class LEDImage extends Blockly.Field {
     }
 }
 
-Blockly.Field.register('ledImage', LEDImage);
+Blockly.Field.register('LedImageField', LedImageField);
 
-export default LEDImage;
