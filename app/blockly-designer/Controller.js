@@ -59,6 +59,7 @@ export class Controller {
     }
 
     loadXml(xmlText, filename) {
+        this.blockly.clear();
         const xml = Blockly.Xml.textToDom(xmlText);
         Blockly.Xml.domToWorkspace(xml, this.blockly);
         this.workspace_file = filename;
@@ -69,7 +70,7 @@ export class Controller {
     }
 
     async loadFromFile() {
-        const [filename, filecontent] = await uploadFile('.xml');
-        this.loadXml(filecontent, filename);
+        const [filename, fileContent] = await uploadFile('.xml');
+        this.loadXml(fileContent, filename);
     }
 }

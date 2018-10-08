@@ -1,4 +1,4 @@
-export const COLORS_LETTERS = {
+export const COLOR_TO_LETTER = {
     "#A2142F": "R",
     "#0072BD": "B",
     "#D95319": "O",
@@ -10,4 +10,5 @@ export const COLORS_LETTERS = {
 };
 
 export const COLUMNS = 10, LINES = 10;
-export const COLORS = _.map(COLORS_LETTERS, (v, k) => k);
+export const COLORS = _.map(COLOR_TO_LETTER, (v, k) => k);
+export const LETTER_TO_COLOR = _.reduce(COLOR_TO_LETTER, (acc, v, k) => { acc[v] = k; return acc; }, {});
