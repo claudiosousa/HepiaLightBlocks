@@ -1,5 +1,6 @@
 import toolbox from './Toolbox.js';
-
+import downloadFile from '../tools/downloadFile.js';
+import uploadFile from '../tools/uploadFile.js';
 
 const designerConfiguration = {
     media: '../node_modules/blockly/media/',
@@ -24,8 +25,12 @@ const designerConfiguration = {
 
 export class Controller {
 
-    constructor(domContainer) {
+    static get DEFAULT_WORKSPACE_FILE() {
+        return 'hepialight.xml';
+    }
 
+    constructor(domContainer) {
+        this.workspace_file = Controller.DEFAULT_WORKSPACE_FILE;
         this.blockly = Blockly.inject(domContainer, designerConfiguration);
 
         window.addEventListener('resize', () => this.resize(), false);
@@ -48,4 +53,23 @@ export class Controller {
         return Blockly.JavaScript.workspaceToCode(this.blockly);
     }
 
+    getXml() {
+        const xml = Blockly.Xml.workspaceToDom(this.blockly);
+        return Blockly.Xml.domToPrettyText(xml);
+    }
+
+    loadXml(xmlText, filename) {
+        const xml = Blockly.Xml.textToDom(xmlText);
+        Blockly.Xml.domToWorkspace(xml, this.blockly);
+        this.workspace_file = filename;
+    }
+
+    downloadXml() {
+        downloadFile(this.workspace_file, this.getXml());
+    }
+
+    async loadFromFile() {
+        const [filename, filecontent] = await uploadFile('.xml');
+        this.loadXml(filecontent, filename);
+    }
 }

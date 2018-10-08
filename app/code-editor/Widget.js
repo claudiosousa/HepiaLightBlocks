@@ -1,4 +1,4 @@
-import download from '../tools/download.js';
+import download from '../tools/downloadFile.js';
 
 export class Widget {
 

@@ -7,4 +7,6 @@ const pythonWidget = new PythonWidget($('#codeOutput')[0], blocklyCtrl);
 
 
 $('#downloadBtn').click(() => pythonWidget.download());
+$('#saveBtn').click(() => blocklyCtrl.downloadXml());
+$('#loadBtn').click(() => blocklyCtrl.loadFromFile());
 
