@@ -36,7 +36,18 @@ const toolboxConfig = [
     name: 'Logique',
     color: '%{BKY_LOGIC_HUE}',
     blocks: [
-      'controls_if'
+      'logic_compare',
+      'logic_operation',
+      'logic_negate',
+      'logic_boolean',
+      'controls_whileUntil',
+      'controls_if',
+      {
+        type: 'controls_if',
+        mutation: [
+          { name: 'else', value: 1 },
+        ]
+      }
     ]
   },
   {
@@ -44,6 +55,39 @@ const toolboxConfig = [
     color: '%{BKY_LOOPS_HUE}',
     blocks: [
       'controls_whileUntil',
+      {
+        type: 'controls_for',
+        value: [{
+          name: 'FROM',
+          block: {
+            type: 'math_number',
+            field: {
+              name: 'NUM',
+              text: 0
+            }
+          }
+        },
+        {
+          name: 'TO',
+          block: {
+            type: 'math_number',
+            field: {
+              name: 'NUM',
+              text: 9
+            }
+          }
+        },
+        {
+          name: 'BY',
+          block: {
+            type: 'math_number',
+            field: {
+              name: 'NUM',
+              text: 1
+            }
+          }
+        }]
+      },
       {
         type: 'controls_repeat_ext',
         value: {
@@ -93,6 +137,7 @@ const buildFunctions = {
 
   text: v => v,
   field: v => `<field name="${v.name}">${buildFunctions.children(v)}</field>\n`,
+  mutation: v => `<mutation ${v.name}="${v.value}"></mutation>\n`,
   value: v => `<value name="${v.name}">${buildFunctions.children(v)}</value>\n`,
   block: b => {
     if (typeof (b) == 'string')

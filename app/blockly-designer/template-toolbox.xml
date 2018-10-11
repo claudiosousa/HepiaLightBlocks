@@ -5,14 +5,7 @@
       <mutation elseif="1" else="1"></mutation>
     </block>
   </category>
-  <category name="Boolean" colour="%{BKY_LOGIC_HUE}">
-    <block type="logic_compare"></block>
-    <block type="logic_operation"></block>
-    <block type="logic_negate"></block>
-    <block type="logic_boolean"></block>
-    <block type="logic_null"></block>
-    <block type="logic_ternary"></block>
-  </category>
+
 </category>
 
 <block type="controls_for">
@@ -91,8 +84,6 @@
   <block type="lists_setIndex"></block>
 </category>
 <sep></sep>
-<category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
-</category>
 <category name="Functions" custom="PROCEDURE" colour="%{BKY_PROCEDURES_HUE}">
 </category>
 <sep></sep>
