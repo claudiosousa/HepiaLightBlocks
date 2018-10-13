@@ -98,7 +98,6 @@ export default class LedImageField extends Blockly.Field {
                         index: y * 10 + x,
                         height: 15,
                         width: 15,
-                        fill: '#A0C9F0',
                         rx: '4'
                     },
                     this.fieldGroup_);
@@ -177,17 +176,18 @@ export default class LedImageField extends Blockly.Field {
 
     updateCellColor(index, colorLetter) {
         const cell = $(this.fieldGroup_).find(`[index=${index}]`)[0];
-        cell.style.fill = colorLetter == '.' ? null : LETTER_TO_COLOR[colorLetter];
+        const color = colorLetter == '.' ? null : LETTER_TO_COLOR[colorLetter];;
+        cell.style.fill = color
+        cell.setAttribute('fill', color);
     }
 
     onClick_(e) {
         var cell = e.target;
         if (cell.className.baseVal != 'image-led-pixel')
             return;
-        let fillColor = null;
-        if (!cell.style.fill)
-            fillColor = this.getColor();
-        let colorLetter = fillColor ? COLOR_TO_LETTER[fillColor] : '.';
+        let fillColor = this.getColor();
+
+        let colorLetter = cell.getAttribute('fill') != fillColor ? COLOR_TO_LETTER[fillColor] : '.';
         const cellIndex = Number(cell.attributes.index.value);
 
         this.colorArray[cellIndex] = colorLetter;
