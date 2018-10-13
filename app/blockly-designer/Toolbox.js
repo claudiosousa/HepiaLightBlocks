@@ -36,7 +36,8 @@ const toolboxConfig = [
     name: 'Entrées',
     color: '40',
     blocks: [
-      'BouttonPresse'
+      'BouttonPresse',
+      'Penche'
     ]
   },
   {
@@ -47,7 +48,6 @@ const toolboxConfig = [
       'logic_operation',
       'logic_negate',
       'logic_boolean',
-      'controls_whileUntil',
       'controls_if',
       {
         type: 'controls_if',
