@@ -61,7 +61,7 @@ const toolboxConfig = [
     name: 'Boucles',
     color: '%{BKY_LOOPS_HUE}',
     blocks: [
-      'controls_whileUntil',
+      'PourToujours',
       {
         type: 'controls_for',
         value: [{
@@ -95,6 +95,7 @@ const toolboxConfig = [
           }
         }]
       },
+      'controls_whileUntil',
       {
         type: 'controls_repeat_ext',
         value: {

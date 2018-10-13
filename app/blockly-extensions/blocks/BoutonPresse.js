@@ -12,7 +12,7 @@ const BouttonPresse = {
     },
     python: block => {
         const button = block.getFieldValue('button_position');
-        return `touche_${button}()\n`;
+        return [`touche_${button}()`, 1];
     }
 };
 

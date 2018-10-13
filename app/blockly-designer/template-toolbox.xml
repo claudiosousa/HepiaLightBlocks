@@ -1,34 +1,4 @@
-    <block type="controls_if">
-      <mutation else="1"></mutation>
-    </block>
-    <block type="controls_if">
-      <mutation elseif="1" else="1"></mutation>
-    </block>
-  </category>
 
-</category>
-
-<block type="controls_for">
-    <field name="VAR">i</field>
-    <value name="FROM">
-      <block type="math_number">
-        <field name="NUM">1</field>
-      </block>
-    </value>
-    <value name="TO">
-      <block type="math_number">
-        <field name="NUM">10</field>
-      </block>
-    </value>
-    <value name="BY">
-      <block type="math_number">
-        <field name="NUM">1</field>
-      </block>
-    </value>
-  </block>
-  <block type="controls_forEach"></block>
-  <block type="controls_flow_statements"></block>
-</category>
 <category name="Math" colour="%{BKY_MATH_HUE}">
   <block type="math_number">
     <field name="NUM">123</field>
@@ -84,6 +54,7 @@
   <block type="lists_setIndex"></block>
 </category>
 <sep></sep>
+
 <category name="Functions" custom="PROCEDURE" colour="%{BKY_PROCEDURES_HUE}">
 </category>
 <sep></sep>
