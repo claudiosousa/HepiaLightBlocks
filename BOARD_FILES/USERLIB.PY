@@ -36,7 +36,7 @@ def afficher_grille(grille):
     arr = [COLORS[c] for c in grille if c in COLORS]
     for i in range(NBR_LIGNES):
         for j in range(NBR_COLONNES):
-            screen.set_led((i, j), arr[i*NBR_COLONNES+j])
+            screen.set_led((j, NBR_COLONNES-1-i), arr[i*NBR_COLONNES+j])
 
 
 def allumer_tout(couleur):
