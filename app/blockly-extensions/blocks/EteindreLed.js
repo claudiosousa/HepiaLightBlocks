@@ -17,8 +17,8 @@ const EteindreLed = {
         this.setHelpUrl('');
     },
     python: block => {
-        let y = Blockly.Python.valueToCode(block, 'y', 1);
-        let x = Blockly.Python.valueToCode(block, 'x', 2);
+        const y = Blockly.Python.valueToCode(block, 'y', 1);
+        const x = Blockly.Python.valueToCode(block, 'x', 2);
 
         return `eteindre_led(${x}, ${y})\n`;
     }

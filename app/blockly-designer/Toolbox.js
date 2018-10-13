@@ -33,6 +33,13 @@ const toolboxConfig = [
     ]
   },
   {
+    name: 'Entrées',
+    color: '40',
+    blocks: [
+      'BouttonPresse'
+    ]
+  },
+  {
     name: 'Logique',
     color: '%{BKY_LOGIC_HUE}',
     blocks: [

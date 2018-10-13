@@ -1,0 +1,20 @@
+const BouttonPresse = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Bouton pressé")
+            .appendField(new Blockly.FieldDropdown([
+                [{ "src": "./images/board_button1.png", "width": 15, "height": 15, "alt": "1" }, "haut_gauche"],
+                [{ "src": "./images/board_button2.png", "width": 15, "height": 15, "alt": "2" }, "haut_droite"],
+                [{ "src": "./images/board_button3.png", "width": 15, "height": 15, "alt": "3" }, "bas_gauche"],
+                [{ "src": "./images/board_button4.png", "width": 15, "height": 15, "alt": "4" }, "bas_droite"]]), "button_position");
+        this.setOutput(true, "Boolean");
+        this.setColour(45);
+    },
+    python: block => {
+        const button = block.getFieldValue('button_position');
+        return `touche_${button}()\n`;
+    }
+};
+
+Blockly.Blocks.BouttonPresse = BouttonPresse;
+Blockly.Python.BouttonPresse = BouttonPresse.python;

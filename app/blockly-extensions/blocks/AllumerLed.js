@@ -23,8 +23,8 @@ const AllumerLed = {
     python: block => {
         const converRgbToNumber = rgb => parseInt(rgb.substr(1), 16);
 
-        let y = Blockly.Python.valueToCode(block, 'y', 1);
-        let x = Blockly.Python.valueToCode(block, 'x', 2);
+        const y = Blockly.Python.valueToCode(block, 'y', 1);
+        const x = Blockly.Python.valueToCode(block, 'x', 2);
         const color = block.getFieldValue('color');
         return `allumer_led(${x}, ${y}, ${converRgbToNumber(color)})\n`;
     }
