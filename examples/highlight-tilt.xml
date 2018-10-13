@@ -2,6 +2,7 @@
   <block type="PourToujours" id="(R@(9iVy[x^^;B.9VP_@" x="188" y="62">
     <statement name="instructions">
       <block type="controls_if" id="/iNuVgTHe6rL=`UiX(0%">
+        <mutation elseif="3" else="1"></mutation>
         <value name="IF0">
           <block type="Penche" id="~30+(]=XV)!BwEYQz-D[">
             <field name="penche_position">avant</field>
@@ -13,51 +14,45 @@
             <field name="image">OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO............................................................</field>
           </block>
         </statement>
-        <next>
-          <block type="controls_if" id="_x_hKAA@-JEivA45ddKt">
-            <value name="IF0">
-              <block type="Penche" id="s_;@rZn;b9+02iIVBnzF">
-                <field name="penche_position">droite</field>
-              </block>
-            </value>
-            <statement name="DO0">
-              <block type="LedImage" id="e[xZ-W-{x7G%=$z:]^EU">
-                <field name="color">#0072BD</field>
-                <field name="image">......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB</field>
-              </block>
-            </statement>
-            <next>
-              <block type="controls_if" id="`A%ysl72ZjFUB;;^C3B7">
-                <value name="IF0">
-                  <block type="Penche" id="kGf7?u+2%yc|i,`08b9:">
-                    <field name="penche_position">gauche</field>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="LedImage" id="dzf78FxUsV}MEBIA8$U=">
-                    <field name="color">#77AC30</field>
-                    <field name="image">GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......</field>
-                  </block>
-                </statement>
-                <next>
-                  <block type="controls_if" id="[HDVGf1ZNs0s~L!Ewp7k">
-                    <value name="IF0">
-                      <block type="Penche" id="c`f+s|}.XzlsU{R(N7!R">
-                        <field name="penche_position">arriere</field>
-                      </block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="LedImage" id="8+{]g?_%0B+ur!Sj+~xQ">
-                        <field name="color">#A2142F</field>
-                        <field name="image">............................................................RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</field>
-                      </block>
-                    </statement>
-                  </block>
-                </next>
-              </block>
-            </next>
+        <value name="IF1">
+          <block type="Penche" id="s_;@rZn;b9+02iIVBnzF">
+            <field name="penche_position">droite</field>
           </block>
-        </next>
+        </value>
+        <statement name="DO1">
+          <block type="LedImage" id="e[xZ-W-{x7G%=$z:]^EU">
+            <field name="color">#0072BD</field>
+            <field name="image">......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB......BBBB</field>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="Penche" id="kGf7?u+2%yc|i,`08b9:">
+            <field name="penche_position">gauche</field>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="LedImage" id="dzf78FxUsV}MEBIA8$U=">
+            <field name="color">#77AC30</field>
+            <field name="image">GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......GGGG......</field>
+          </block>
+        </statement>
+        <value name="IF3">
+          <block type="Penche" id="c`f+s|}.XzlsU{R(N7!R">
+            <field name="penche_position">arriere</field>
+          </block>
+        </value>
+        <statement name="DO3">
+          <block type="LedImage" id="8+{]g?_%0B+ur!Sj+~xQ">
+            <field name="color">#A2142F</field>
+            <field name="image">............................................................RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR</field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="LedImage" id="fGKJb,?i-IZb#S@_7E`S">
+            <field name="color">#A2142F</field>
+            <field name="image">....................................................................................................</field>
+          </block>
+        </statement>
       </block>
     </statement>
   </block>
