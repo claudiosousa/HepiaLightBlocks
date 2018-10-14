@@ -6,6 +6,7 @@ const toolboxConfig = [
     color: 0,
     blocks: [
       'LedImage',
+      'ScrollText',
       ...['AllumerLed', 'EteindreLed']
         .map(n => ({
           type: n,

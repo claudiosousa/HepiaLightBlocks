@@ -6,3 +6,4 @@ import './EteindreLed.js';
 import './LedImage.js';
 import './Penche.js';
 import './PourToujours.js';
+import './ScrollText.js';
