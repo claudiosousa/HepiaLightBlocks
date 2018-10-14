@@ -120,7 +120,7 @@ textDict = {
     "$":[4, 30, 5, 14, 20, 15, 4, 0, 0],
 }
 
-def affiche_texte(text, color=ROUGE, speed=0.1):
+def afficher_texte(text, color=ROUGE, speed=0.1):
     width = 5
     height = 9
     h_offset = 9

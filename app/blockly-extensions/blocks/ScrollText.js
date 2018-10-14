@@ -21,7 +21,7 @@ const ScrollText = {
     python: block => {
         const text = block.getFieldValue('text');
 
-        return `affiche_texte('${text}')`;
+        return `afficher_texte('${text}')`;
     }
 }
 
