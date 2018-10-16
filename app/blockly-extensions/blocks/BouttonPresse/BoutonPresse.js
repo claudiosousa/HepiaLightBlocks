@@ -6,7 +6,8 @@ const BouttonPresse = {
                 new Blockly.FieldDropdown([
                     [
                         {
-                            src: './images/board_button1.png',
+                            src:
+                                'blockly-extensions/blocks/BouttonPresse/images/board_button1.png',
                             width: 15,
                             height: 15
                         },
@@ -14,7 +15,8 @@ const BouttonPresse = {
                     ],
                     [
                         {
-                            src: './images/board_button2.png',
+                            src:
+                                'blockly-extensions/blocks/BouttonPresse/images/board_button2.png',
                             width: 15,
                             height: 15
                         },
@@ -22,7 +24,8 @@ const BouttonPresse = {
                     ],
                     [
                         {
-                            src: './images/board_button3.png',
+                            src:
+                                'blockly-extensions/blocks/BouttonPresse/images/board_button3.png',
                             width: 15,
                             height: 15
                         },
@@ -30,7 +33,8 @@ const BouttonPresse = {
                     ],
                     [
                         {
-                            src: './images/board_button4.png',
+                            src:
+                                'blockly-extensions/blocks/BouttonPresse/images/board_button4.png',
                             width: 15,
                             height: 15
                         },

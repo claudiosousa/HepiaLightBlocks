@@ -6,7 +6,8 @@ const Penche = {
                 new Blockly.FieldDropdown([
                     [
                         {
-                            src: './images/board_top.png',
+                            src:
+                                'blockly-extensions/blocks/Penche/images/board_top.png',
                             width: 15,
                             height: 15
                         },
@@ -14,7 +15,8 @@ const Penche = {
                     ],
                     [
                         {
-                            src: './images/board_right.png',
+                            src:
+                                'blockly-extensions/blocks/Penche/images/board_right.png',
                             width: 15,
                             height: 15
                         },
@@ -22,7 +24,8 @@ const Penche = {
                     ],
                     [
                         {
-                            src: './images/board_bottom.png',
+                            src:
+                                'blockly-extensions/blocks/Penche/images/board_bottom.png',
                             width: 15,
                             height: 15
                         },
@@ -30,7 +33,8 @@ const Penche = {
                     ],
                     [
                         {
-                            src: './images/board_left.png',
+                            src:
+                                'blockly-extensions/blocks/Penche/images/board_left.png',
                             width: 15,
                             height: 15
                         },

@@ -4,19 +4,30 @@
 <head>
     <meta charset="utf-8">
     <title>Hepia Light App Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/app.css">
+    <link rel="stylesheet" href="blockly-extensions/fields/LegImageField.css">
 </head>
 
 <body>
 
-    <blockly-designer></blockly-designer>
+    <header>
+        <a href="https://www.hesge.ch/hepia/">
+            <img target="_blank" src="images/logo_hepia_couleur_rvb.png" alt="hepia">
+        </a>
+    </header>
 
-    <python-widget></python-widget>
-    <div id="ctrlPanel">
-        <button id="downloadBtn">Download</button>
-        <button id="saveBtn">Save</button>
-        <button id="loadBtn">Load</button>
-    </div>
+    <main>
+        <blockly-designer></blockly-designer>
+
+        <python-widget></python-widget>
+        <div id="ctrlPanel">
+            <button id="downloadBtn">Download</button>
+            <button id="saveBtn">Save</button>
+            <button id="loadBtn">Load</button>
+        </div>
+    </main>
+
+    <footer></footer>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
@@ -32,4 +43,5 @@
     <script src="app.js" type="module"></script>
 
 </body>
+
 </html>
