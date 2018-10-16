@@ -1,20 +1,25 @@
 import download from '../tools/downloadFile.js';
 
-export class Widget {
-    constructor(domContainer, blockly) {
-        this.domContainer = domContainer;
+class PythonWidget extends HTMLElement {
+    constructor() {
+        super();
+        this;
+    }
+
+    setBlockly(blockly) {
         this.blockly = blockly;
         this.blockly.addChangeListener(code => this.displayCode(code));
     }
 
     displayCode() {
-        this.domContainer.innerHTML = PR.prettyPrintOne(
-            this.blockly.getPythonCode(),
-            'py'
-        );
+        this.innerHTML = PR.prettyPrintOne(this.blockly.getPythonCode(), 'py');
     }
 
     download() {
         download('MAIN.PY', this.blockly.getPythonCode());
     }
 }
+
+customElements.define('python-widget', PythonWidget);
+
+export default PythonWidget;

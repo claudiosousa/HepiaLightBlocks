@@ -1,9 +1,10 @@
 import './blockly-designer/index.js';
-import { Widget as PythonWidget } from './code-editor/Widget.js';
+import './code-editor/Widget.js';
 
 const blocklyDesigner = $('blockly-designer')[0];
+const pythonWidget = $('python-widget')[0];
 
-const pythonWidget = new PythonWidget($('#codeOutput')[0], blocklyDesigner);
+pythonWidget.setBlockly(blocklyDesigner);
 
 $('#downloadBtn').click(() => pythonWidget.download());
 $('#saveBtn').click(() => blocklyDesigner.downloadXml());

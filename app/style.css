@@ -31,25 +31,22 @@ blockly-designer {
     fill-opacity: .9;
 }
 
-#codeOutput {
+python-widget {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
+    margin: 0;
+    padding: 1ex;
+    direction: ltr;
+    border: 1px solid #ccc;
+    overflow: scroll;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
 }
 
 #ctrlPanel{
   grid-column: 4 / 5;
   grid-row: 3 / 4;
-}
-
-.content {
-    margin: 0;
-    padding: 1ex;
-    direction: ltr;
-}
-
-pre.content {
-    border: 1px solid #ccc;
-    overflow: scroll;
 }
 
 #content_blocks {
