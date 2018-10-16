@@ -22,14 +22,20 @@ const designerConfiguration = {
     trashcan: true
 };
 
-export class Controller {
+class BlocklyDesigner extends HTMLElement {
     static get DEFAULT_WORKSPACE_FILE() {
         return 'hepialight.xml';
     }
 
-    constructor(domContainer) {
-        this.workspace_file = Controller.DEFAULT_WORKSPACE_FILE;
-        this.blockly = Blockly.inject(domContainer, designerConfiguration);
+    constructor() {
+        super();
+
+        this.render();
+    }
+
+    render() {
+        this.workspace_file = BlocklyDesigner.DEFAULT_WORKSPACE_FILE;
+        this.blockly = Blockly.inject(this, designerConfiguration);
 
         window.addEventListener('resize', () => this.resize(), false);
         this.resize();
@@ -72,3 +78,7 @@ export class Controller {
         this.loadXml(fileContent, filename);
     }
 }
+
+customElements.define('blockly-designer', BlocklyDesigner);
+
+export default BlocklyDesigner;

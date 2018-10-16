@@ -1,10 +1,10 @@
-import { Controller as BlocklyController } from './blockly-designer/Controller.js';
+import './blockly-designer/index.js';
 import { Widget as PythonWidget } from './code-editor/Widget.js';
 
-const blocklyCtrl = new BlocklyController($('#blocklyContainer')[0]);
+const blocklyDesigner = $('blockly-designer')[0];
 
-const pythonWidget = new PythonWidget($('#codeOutput')[0], blocklyCtrl);
+const pythonWidget = new PythonWidget($('#codeOutput')[0], blocklyDesigner);
 
 $('#downloadBtn').click(() => pythonWidget.download());
-$('#saveBtn').click(() => blocklyCtrl.downloadXml());
-$('#loadBtn').click(() => blocklyCtrl.loadFromFile());
+$('#saveBtn').click(() => blocklyDesigner.downloadXml());
+$('#loadBtn').click(() => blocklyDesigner.loadFromFile());
