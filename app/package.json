@@ -2,9 +2,8 @@
   "name": "hepialight-blockly",
   "version": "1.0.0",
   "description": "Block based web app for the [HEPIA](http://hepia.hesge.ch) education board [hepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).",
-  "main": "index.js",
   "scripts": {
-    "start": "node_modules/http-server/bin/http-server . -a 0.0.0.0 -p 8765 -o http://127.0.0.1:8765/app/",
+    "start": "node_modules/http-server/bin/http-server . -a 0.0.0.0 -p 8765 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
