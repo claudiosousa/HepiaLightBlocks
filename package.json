@@ -1,0 +1,44 @@
+{
+    "name": "hepialight-repo",
+    "version": "1.0.0",
+    "description": "Block based web app for the [HEPIA](http://hepia.hesge.ch) education board [hepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).",
+    "scripts": {
+        "start": "node_modules/http-server/bin/http-server . -a 0.0.0.0 -p 8765 -o",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettify": "node_modules/prettier/bin-prettier.js  \"**/*.{js,json,scss}\" --write"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{json,scss,md}": [
+            "node_modules/prettier/bin-prettier.js --write",
+            "git add"
+        ],
+        "*.js": [
+            "node_modules/prettier/bin-prettier.js --write",
+            "node_modules/eslint/bin/eslint.js --fix",
+            "git add"
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/claudiosousa/hepialight-blockly.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/claudiosousa/hepialight-blockly/issues"
+    },
+    "homepage": "https://github.com/claudiosousa/hepialight-blockly#readme",
+    "dependencies": {
+        "eslint": "^5.7.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "husky": "^1.1.2",
+        "lint-staged": "^7.3.0",
+        "prettier": "^1.14.3"
+    }
+}

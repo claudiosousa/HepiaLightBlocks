@@ -1,14 +1,13 @@
-import { COLORS } from '../Constants.js'
+import { COLORS } from '../Constants.js';
 
 const AllumerLed = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField('allumer LED');
+    init: function() {
+        this.appendDummyInput().appendField('allumer LED');
         this.appendValueInput('y')
-            .setCheck("Number")
+            .setCheck('Number')
             .appendField('ligne');
         this.appendValueInput('x')
-            .setCheck("Number")
+            .setCheck('Number')
             .appendField('colonne');
         this.appendDummyInput()
             .appendField('couleur')
@@ -29,7 +28,6 @@ const AllumerLed = {
         return `allumer_led(${x}, ${y}, ${converRgbToNumber(color)})\n`;
     }
 };
-
 
 Blockly.Blocks.AllumerLed = AllumerLed;
 Blockly.Python.AllumerLed = AllumerLed.python;

@@ -22,9 +22,7 @@ const designerConfiguration = {
     trashcan: true
 };
 
-
 export class Controller {
-
     static get DEFAULT_WORKSPACE_FILE() {
         return 'hepialight.xml';
     }

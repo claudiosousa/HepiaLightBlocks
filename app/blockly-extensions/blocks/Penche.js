@@ -1,14 +1,45 @@
 const Penche = {
-    init: function () {
+    init: function() {
         this.appendDummyInput()
-            .appendField("Penche")
-            .appendField(new Blockly.FieldDropdown([
-                [{ "src": "./images/board_top.png", "width": 15, "height": 15 }, "avant"],
-                [{ "src": "./images/board_right.png", "width": 15, "height": 15 }, "droite"],
-                [{ "src": "./images/board_bottom.png", "width": 15, "height": 15 }, "arriere"],
-                [{ "src": "./images/board_left.png", "width": 15, "height": 15 }, "gauche"]]),
-                "penche_position");
-        this.setOutput(true, "Boolean");
+            .appendField('Penche')
+            .appendField(
+                new Blockly.FieldDropdown([
+                    [
+                        {
+                            src: './images/board_top.png',
+                            width: 15,
+                            height: 15
+                        },
+                        'avant'
+                    ],
+                    [
+                        {
+                            src: './images/board_right.png',
+                            width: 15,
+                            height: 15
+                        },
+                        'droite'
+                    ],
+                    [
+                        {
+                            src: './images/board_bottom.png',
+                            width: 15,
+                            height: 15
+                        },
+                        'arriere'
+                    ],
+                    [
+                        {
+                            src: './images/board_left.png',
+                            width: 15,
+                            height: 15
+                        },
+                        'gauche'
+                    ]
+                ]),
+                'penche_position'
+            );
+        this.setOutput(true, 'Boolean');
         this.setColour(45);
     },
     python: block => {

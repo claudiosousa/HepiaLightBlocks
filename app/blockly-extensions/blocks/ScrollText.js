@@ -5,14 +5,13 @@
 #   # 17
 */
 
-
 const textDict = {
-    'A': [14, 17, 17, 17, 31, 17, 17],
-    'B': [30, 17, 17, 30, 17, 17, 30]
-}
+    A: [14, 17, 17, 17, 31, 17, 17],
+    B: [30, 17, 17, 30, 17, 17, 30]
+};
 
 const ScrollText = {
-    init: function () {
+    init: function() {
         this.appendDummyInput()
             .appendField('Afficher ')
             .appendField(new Blockly.FieldTextInput('Salut!'), 'text');
@@ -23,8 +22,7 @@ const ScrollText = {
 
         return `afficher_texte('${text}')`;
     }
-}
-
+};
 
 Blockly.Blocks.ScrollText = ScrollText;
 Blockly.Python.ScrollText = ScrollText.python;

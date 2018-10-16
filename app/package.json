@@ -1,26 +1,26 @@
 {
-  "name": "hepialight-blockly",
-  "version": "1.0.0",
-  "description": "Block based web app for the [HEPIA](http://hepia.hesge.ch) education board [hepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).",
-  "scripts": {
-    "start": "node_modules/http-server/bin/http-server . -a 0.0.0.0 -p 8765 -o",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/claudiosousa/hepialight-blockly.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/claudiosousa/hepialight-blockly/issues"
-  },
-  "homepage": "https://github.com/claudiosousa/hepialight-blockly#readme",
-  "dependencies": {
-    "blockly": "github:google/blockly",
-    "code-prettify": "github:google/code-prettify",
-    "http-server": "^0.11.1",
-    "jquery": "^3.3.1",
-    "lodash": "^4.17.11"
-  }
+    "name": "hepialight-blockly",
+    "version": "1.0.0",
+    "description": "Block based web app for the [HEPIA](http://hepia.hesge.ch) education board [hepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).",
+    "scripts": {
+        "start": "node_modules/http-server/bin/http-server . -a 0.0.0.0 -p 8765 -o",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/claudiosousa/hepialight-blockly.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/claudiosousa/hepialight-blockly/issues"
+    },
+    "homepage": "https://github.com/claudiosousa/hepialight-blockly#readme",
+    "dependencies": {
+        "blockly": "github:google/blockly",
+        "code-prettify": "github:google/code-prettify",
+        "http-server": "^0.11.1",
+        "jquery": "^3.3.1",
+        "lodash": "^4.17.11"
+    }
 }

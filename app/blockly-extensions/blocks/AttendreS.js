@@ -1,6 +1,5 @@
-
 const AttendreS = {
-    init: function () {
+    init: function() {
         this.appendDummyInput()
             .appendField('attendre')
             .appendField(new Blockly.FieldNumber(1, 0, Infinity), 's')
@@ -17,7 +16,6 @@ const AttendreS = {
         return `delai(${s})\n`;
     }
 };
-
 
 Blockly.Blocks.AttendreS = AttendreS;
 Blockly.Python.AttendreS = AttendreS.python;

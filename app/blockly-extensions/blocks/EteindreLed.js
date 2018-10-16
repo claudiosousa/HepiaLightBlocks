@@ -1,13 +1,11 @@
-
 const EteindreLed = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField('eteindre LED');
+    init: function() {
+        this.appendDummyInput().appendField('eteindre LED');
         this.appendValueInput('y')
-            .setCheck("Number")
+            .setCheck('Number')
             .appendField('ligne');
         this.appendValueInput('x')
-            .setCheck("Number")
+            .setCheck('Number')
             .appendField('colonne');
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
@@ -23,7 +21,6 @@ const EteindreLed = {
         return `eteindre_led(${x}, ${y})\n`;
     }
 };
-
 
 Blockly.Blocks.EteindreLed = EteindreLed;
 Blockly.Python.EteindreLed = EteindreLed.python;

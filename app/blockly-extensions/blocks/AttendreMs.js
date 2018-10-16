@@ -1,5 +1,5 @@
 const AttendreMs = {
-    init: function () {
+    init: function() {
         this.appendDummyInput()
             .appendField('attendre')
             .appendField(new Blockly.FieldNumber(100, 0, Infinity), 'ms')
@@ -15,8 +15,7 @@ const AttendreMs = {
         const s = block.getFieldValue('ms');
         return `delai(${s / 1000})\n`;
     }
-}
-
+};
 
 Blockly.Blocks.AttendreMs = AttendreMs;
 Blockly.Python.AttendreMs = AttendreMs.python;

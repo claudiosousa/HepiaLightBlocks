@@ -7,12 +7,18 @@ Blockly.Python.finish = code => {
     }
 
     return finishFn(code);
-}
+};
 
 Blockly.Python.math_change = block => {
-    const argument0 = Blockly.Python.valueToCode(block, 'DELTA',
-        Blockly.Python.ORDER_ADDITIVE) || '0';
-    const varName = Blockly.Python.variableDB_.getName(block.getFieldValue('VAR'),
-        Blockly.Variables.NAME_TYPE);
+    const argument0 =
+        Blockly.Python.valueToCode(
+            block,
+            'DELTA',
+            Blockly.Python.ORDER_ADDITIVE
+        ) || '0';
+    const varName = Blockly.Python.variableDB_.getName(
+        block.getFieldValue('VAR'),
+        Blockly.Variables.NAME_TYPE
+    );
     return `${varName} = ${varName} + ${argument0}\n`;
 };
