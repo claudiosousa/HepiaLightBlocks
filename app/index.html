@@ -23,36 +23,46 @@
 
     <main>
 
-        <blockly-designer></blockly-designer>
+        <div class="left-panel">
+
+            <blockly-designer></blockly-designer>
+
+            <footer>
+                <div style="flex:1 1 206px;"></div>
+                <div class="project-name-area">
+                    <input name="project-name" type="text" class="form-control" placeholder="Choisit un nom de projet">
+                    <button class="btn save-btn btn-primary">
+                        <i class="fa fa-save"></i>
+                    </button>
+                </div>
+                <div class="btn-group zoom-area">
+                    <button class="btn btn-primary zoom-in-btn">
+                        <i class="fa fa-plus-circle"></i>
+                    </button>
+                    <button class="btn btn-primary zoom-out-btn">
+                        <i class="fa fa-minus-circle"></i>
+                    </button>
+                </div>
+            </footer>
+        </div>
 
         <div class="splitter"></div>
 
-        <python-widget></python-widget>
+        <div class="right-panel">
+            <python-widget></python-widget>
+            <footer>
+                <div class="download-area">
+                    <button class="btn btn-lg btn-block download-btn">
+                        <i class="fa fa-download"></i>
+                        <span>Download</span>
+                    </button>
+                </div>
+            </footer>
+
+        </div>
 
     </main>
 
-    <footer>
-        <div class="download-area">
-            <button class="btn btn-lg btn-block download-btn">
-                <i class="fa fa-download"></i>
-                <span>Download</span>
-            </button>
-        </div>
-        <div class="project-name-area">
-            <input name="project-name" type="text" class="form-control" placeholder="Choisit un nom de projet">
-            <button class="btn save-btn btn-primary">
-                <i class="fa fa-save"></i>
-            </button>
-        </div>
-        <div class="btn-group zoom-area">
-            <button class="btn btn-primary zoom-in-btn">
-                <i class="fa fa-plus-circle"></i>
-            </button>
-            <button class="btn btn-primary zoom-out-btn">
-                <i class="fa fa-minus-circle"></i>
-            </button>
-        </div>
-    </footer>
 
     <div class="dropping-file">
         <div class="drop-welcome"><span>Ouvrir le fichier</span>

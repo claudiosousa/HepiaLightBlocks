@@ -9,7 +9,7 @@ body {
     display: grid;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 4rem auto 5rem;
+    grid-template-rows: 4rem auto;
 }
 
 header {
@@ -40,29 +40,28 @@ main {
     grid-row: 2 / 3;
     display: flex;
     flex-direction: row;
-    border: 1px solid silver;
     overflow: hidden;
-    /* avoid browser level touch actions */
-    xtouch-action: none;
 }
 
 footer {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
+    height: 5rem;
     display: flex;
     background-color: #fdfdff;
     border-top: 1px solid rgb(223, 223, 223);
+    justify-content: stretch;
 }
 
 .download-area {
-    width: 27rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 1rem;
+    align-items: center;
 }
 
 .download-btn {
+    max-width: 300px;
     font-size: 1.42857143rem;
     font-weight: 700;
     color: white;
@@ -86,6 +85,7 @@ footer {
     display: flex;
     align-items: center;
     padding: 0 2rem;
+    flex-shrink: 0;
 }
 
 .project-name-area input {
@@ -94,9 +94,9 @@ footer {
 }
 
 .zoom-area {
-    padding: 0 2rem;
-    align-items: center;
+    padding: 0 6rem 0 2rem;
     flex-grow: 1;
+    align-items: center;
     justify-content: flex-end;
 }
 
@@ -107,25 +107,52 @@ footer {
 }
 
 blockly-designer {
+    flex: 1 1;
+    position: relative;
+}
+
+blockly-designer>* {
+    position: absolute;
+    height: 100%;
+}
+
+.left-panel {
     flex: 0 0 auto;
     /* only manually resize */
-    width: calc(100% - 400px);
-    min-width: calc(100% - 600px);
-    max-width: calc(100% - 200px);
+    width: calc(100% - 370px);
+    min-width: calc(100% - 500px);
+    max-width: calc(100% - 240px);
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel footer {
+    justify-content: flex-end;
 }
 
 .splitter {
     flex: 0 0 auto;
-    width: 6px;
-    background: url(node_modules/jquery-resizable-dom/assets/vsizegrip.png) center center no-repeat #535353;
+    width: 8px;
+    background: url(../node_modules/jquery-resizable-dom/assets/vsizegrip.png) center center no-repeat #535353;
     cursor: e-resize;
+
+}
+
+.right-panel {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 python-widget {
-    flex: 1 1 auto;
+    flex-grow: 1;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
 }
 
 python-widget pre.prettyprint {
+    flex-grow: 1;
     overflow: auto;
     white-space: pre;
     font-size: 1rem;

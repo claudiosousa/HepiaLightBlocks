@@ -67,7 +67,7 @@ $(document.body)
         reader.readAsText(file);
     });
 
-$('blockly-designer').resizable({
+$('.left-panel').resizable({
     handleSelector: '.splitter',
     resizeHeight: false,
     resizeWidthFrom: 'right',
