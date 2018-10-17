@@ -17,7 +17,7 @@ header {
     grid-row: 1 / 2;
     display: flex;
     justify-content: flex-end;
-    background-color: #0479b7;
+    background-color: #007bff;
 }
 
 header a {
@@ -84,6 +84,13 @@ footer {
 .project-name-area input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+.zoom-area{
+    padding: 0 2rem;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 
 .save-btn {

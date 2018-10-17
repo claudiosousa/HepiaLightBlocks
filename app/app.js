@@ -18,7 +18,8 @@ saveBtn.click(() => {
     downloadFile(projectName.val(), blocklyDesigner.getXml());
 });
 
-//ondrop="dropHandler(event);" ondragover="dragOverHandler(event);
+$('.zoom-in-btn').click(() => blocklyDesigner.zoomIn());
+$('.zoom-out-btn').click(() => blocklyDesigner.zoomOut());
 
 const hideDropArea = (timeout = 1000) =>
     (document.body.hideDropAreaTimeout = setTimeout(

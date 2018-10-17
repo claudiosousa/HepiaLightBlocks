@@ -28,28 +28,31 @@
 
     <footer>
         <div class="download-area">
-            <button type="button" class="btn btn-lg btn-block download-btn">
+            <button class="btn btn-lg btn-block download-btn">
                 <i class="fa fa-download"></i>
                 <span>Download</span>
             </button>
         </div>
         <div class="project-name-area">
             <input name="project-name" type="text" class="form-control" placeholder="Choisit un nom de projet">
-            <button class="btn save-btn btn-primary" type="button">
+            <button class="btn save-btn btn-primary">
                 <i class="fa fa-save"></i>
             </button>
         </div>
-        <div style="display:none">
-            <button id="downloadBtn">Download</button>
-            <button id="saveBtn">Save</button>
-            <button id="loadBtn">Load</button>
+        <div class="btn-group zoom-area">
+            <button class="btn btn-primary zoom-in-btn">
+                <i class="fa fa-plus-circle"></i>
+            </button>
+            <button class="btn btn-primary zoom-out-btn">
+                <i class="fa fa-minus-circle"></i>
+            </button>
         </div>
     </footer>
 
     <div class="dropping-file">
         <div class="drop-welcome"><span>Ouvrir le fichier</span>
+        </div>
     </div>
-</div>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
 

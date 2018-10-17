@@ -4,11 +4,11 @@ const designerConfiguration = {
     media: '../node_modules/blockly/media/',
     toolbox,
     zoom: {
-        controls: true,
+        controls: false,
         wheel: true,
         startScale: 1.0,
         maxScale: 3,
-        minScale: 0.3,
+        minScale: 0.2,
         scaleSpeed: 1.2
     },
     grid: {
@@ -17,7 +17,7 @@ const designerConfiguration = {
         colour: '#ccc',
         snap: true
     },
-    trashcan: true
+    trashcan: false
 };
 
 class BlocklyDesigner extends HTMLElement {
