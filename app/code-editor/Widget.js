@@ -1,4 +1,4 @@
-import download from '../tools/downloadFile.js';
+import downloadFile from '../tools/downloadFile.js';
 
 class PythonWidget extends HTMLElement {
     constructor() {
@@ -16,7 +16,7 @@ class PythonWidget extends HTMLElement {
     }
 
     download() {
-        download('MAIN.PY', this.blockly.getPythonCode());
+        downloadFile('MAIN.PY', this.blockly.getPythonCode());
     }
 }
 
