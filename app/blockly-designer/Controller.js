@@ -8,13 +8,13 @@ const designerConfiguration = {
         wheel: true,
         startScale: 1.0,
         maxScale: 3,
-        minScale: 0.2,
+        minScale: 0.3,
         scaleSpeed: 1.2
     },
     grid: {
-        spacing: 25,
-        length: 3,
-        colour: '#ccc',
+        spacing: 45,
+        length: 7,
+        colour: 'rgba(189, 195, 199, 0.30)',
         snap: true
     },
     trashcan: false

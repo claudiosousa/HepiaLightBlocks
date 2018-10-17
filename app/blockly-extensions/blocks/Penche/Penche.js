@@ -1,3 +1,5 @@
+import { TOOLBOX_COLORS } from '../../Constants.js';
+
 const Penche = {
     init: function() {
         this.appendDummyInput()
@@ -44,7 +46,7 @@ const Penche = {
                 'penche_position'
             );
         this.setOutput(true, 'Boolean');
-        this.setColour(45);
+        this.setColour(TOOLBOX_COLORS.INPUT);
     },
     python: block => {
         const button = block.getFieldValue('penche_position');

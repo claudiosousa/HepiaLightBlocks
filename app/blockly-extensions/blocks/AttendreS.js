@@ -1,3 +1,5 @@
+import { TOOLBOX_COLORS } from '../Constants.js';
+
 const AttendreS = {
     init: function() {
         this.appendDummyInput()
@@ -7,7 +9,7 @@ const AttendreS = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(0);
+        this.setColour(TOOLBOX_COLORS.DELAY);
         this.setTooltip('Attendre des secondes');
         this.setHelpUrl('');
     },

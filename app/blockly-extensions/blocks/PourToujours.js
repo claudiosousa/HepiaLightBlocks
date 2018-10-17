@@ -1,8 +1,10 @@
+import { TOOLBOX_COLORS } from '../Constants.js';
+
 const PourToujours = {
     init: function() {
         this.appendDummyInput().appendField('Pour toujours');
         this.appendStatementInput('instructions').setCheck(null);
-        this.setColour(120);
+        this.setColour(TOOLBOX_COLORS.LOOPS);
     },
     python: block => {
         let branch = Blockly.Python.statementToCode(block, 'instructions');

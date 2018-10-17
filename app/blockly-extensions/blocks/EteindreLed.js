@@ -1,3 +1,5 @@
+import { TOOLBOX_COLORS } from '../Constants.js';
+
 const EteindreLed = {
     init: function() {
         this.appendDummyInput().appendField('eteindre LED');
@@ -10,7 +12,7 @@ const EteindreLed = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(0);
+        this.setColour(TOOLBOX_COLORS.DISPLAY);
         this.setTooltip('Eteindre LED');
         this.setHelpUrl('');
     },

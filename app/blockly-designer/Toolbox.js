@@ -1,9 +1,10 @@
 import '../blockly-extensions/index.js';
+import { TOOLBOX_COLORS } from '../blockly-extensions/Constants.js';
 
 const toolboxConfig = [
     {
-        name: 'Ecran',
-        color: 0,
+        name: 'Affichage',
+        color: TOOLBOX_COLORS.DISPLAY,
         blocks: [
             'LedImage',
             'ScrollText',
@@ -36,7 +37,7 @@ const toolboxConfig = [
     },
     {
         name: 'Entrées',
-        color: '40',
+        color: TOOLBOX_COLORS.INPUT,
         blocks: ['BouttonPresse', 'Penche']
     },
     {
@@ -112,7 +113,7 @@ const toolboxConfig = [
     },
     {
         name: 'Delai',
-        color: '40',
+        color: TOOLBOX_COLORS.DELAY,
         blocks: ['AttendreS', 'AttendreMs']
     },
     {

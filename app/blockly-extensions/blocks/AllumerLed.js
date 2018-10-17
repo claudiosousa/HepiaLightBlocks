@@ -1,4 +1,4 @@
-import { COLORS } from '../Constants.js';
+import { COLORS, TOOLBOX_COLORS } from '../Constants.js';
 
 const AllumerLed = {
     init: function() {
@@ -15,7 +15,7 @@ const AllumerLed = {
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(0);
+        this.setColour(TOOLBOX_COLORS.DISPLAY);
         this.setTooltip('Allumer LED');
         this.setHelpUrl('');
     },

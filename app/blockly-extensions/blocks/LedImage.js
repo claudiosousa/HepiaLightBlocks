@@ -1,4 +1,4 @@
-import { COLORS } from '../Constants.js';
+import { COLORS, TOOLBOX_COLORS } from '../Constants.js';
 import LEDImageField from '../fields/LedImageField.js';
 
 const LedImage = {
@@ -13,7 +13,7 @@ const LedImage = {
         this.setInputsInline(false);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(207);
+        this.setColour(TOOLBOX_COLORS.DISPLAY);
         this.setTooltip('Image LED');
         this.setHelpUrl('');
     },

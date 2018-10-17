@@ -1,3 +1,5 @@
+import { TOOLBOX_COLORS } from '../Constants.js';
+
 const ScrollText = {
     init: function() {
         this.appendDummyInput()
@@ -5,7 +7,7 @@ const ScrollText = {
             .appendField(new Blockly.FieldTextInput('Salut!'), 'text');
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(230);
+        this.setColour(TOOLBOX_COLORS.DISPLAY);
     },
     python: block => {
         const text = block.getFieldValue('text');

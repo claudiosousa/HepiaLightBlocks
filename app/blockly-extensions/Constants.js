@@ -20,3 +20,12 @@ export const LETTER_TO_COLOR = _.reduce(
     },
     {}
 );
+
+export const TOOLBOX_COLORS = {
+    DISPLAY: '#1e90ff',
+    INPUT: '#d400d4',
+    LOGIC: '#00a4a6',
+    LOOPS: '#00aa00',
+    DELAY: '#5c2d91',
+    VARIABLES: '#dc143c'
+};
