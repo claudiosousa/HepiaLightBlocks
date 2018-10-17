@@ -32,6 +32,7 @@ a:hover {
 
 header img {
     width: 200px;
+    padding: 0 1rem;
 }
 main {
     grid-column: 1 / 2;
@@ -47,6 +48,7 @@ footer {
     grid-row: 3 / 4;
     display: flex;
     background-color: #fdfdff;
+    border-top:1px solid rgb(223, 223, 223);
 }
 .download-area {
     width: 27rem;
@@ -148,4 +150,8 @@ body > img {
 
 body[dropping='true'] .dropping-file {
     display: block;
+}
+
+blockly-designer #\:1 .blocklyTreeIconNone{
+    background-color: red;
 }

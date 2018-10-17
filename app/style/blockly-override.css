@@ -1,0 +1,49 @@
+.blocklyToolboxDiv {
+    background-color: white;
+    border-left: 1px solid #ecf0f1 !important;
+    box-shadow: 4px 0 2px -4px rgba(0, 0, 0, 0.12),
+        4px 0 2px -4px rgba(0, 0, 0, 0.24);
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, sans-serif;
+}
+
+.blocklyTreeRow {
+    box-shadow: inset 0 -1px 0 0 #ecf0f1;
+    border-left-width: 12px !important;
+    transition-property: background-color;
+    transition-duration: 1s;
+    min-width: 200px;
+    min-height: 40px;
+    line-height: 22px;
+    padding-right: 8px;
+    font-weight: 400;
+    white-space: nowrap;
+    height: 100%;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+}
+
+.blocklyTreeIcon {
+    line-height: 40px;
+    min-height: 40px;
+    vertical-align: middle;
+    background: none !important;
+    opacity: 1;
+    margin: 0 0.25em;
+    width: 30px;
+    font-family: Icons;
+    font-style: normal;
+    text-decoration: inherit;
+    text-align: center;
+}
+
+.blocklyTreeLabel {
+    font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+    padding: 0 3px;
+    vertical-align: middle;
+    font-size: 1.15rem;
+    cursor: pointer;
+}
+
+.blocklyMainBackground {
+    stroke-width: 0;
+}
