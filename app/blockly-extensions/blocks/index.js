@@ -1,4 +1,6 @@
+import './AllumerColonne.js';
 import './AllumerLed.js';
+import './AllumerLigne.js';
 import './AttendreS.js';
 import './AttendreMs.js';
 import './BouttonPresse/BoutonPresse.js';

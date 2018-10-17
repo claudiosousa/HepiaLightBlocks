@@ -32,6 +32,21 @@ const toolboxConfig = [
                         }
                     }
                 ]
+            })),
+            ...['AllumerLigne', 'AllumerColonne'].map(n => ({
+                type: n,
+                value: [
+                    {
+                        name: 'number',
+                        block: {
+                            type: 'math_number',
+                            field: {
+                                name: 'NUM',
+                                text: 0
+                            }
+                        }
+                    }
+                ]
             }))
         ]
     },
