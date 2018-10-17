@@ -18,6 +18,13 @@ header {
     display: flex;
     justify-content: flex-end;
     background-color: #007bff;
+    justify-content: space-between;
+}
+
+header a.bug {
+    color: #333;
+    font-size: 1rem;
+    padding: 0 1rem;
 }
 
 header a {
@@ -135,7 +142,6 @@ blockly-designer>* {
     width: 8px;
     background: url(../node_modules/jquery-resizable-dom/assets/vsizegrip.png) center center no-repeat #535353;
     cursor: e-resize;
-
 }
 
 .right-panel {
