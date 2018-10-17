@@ -14,8 +14,8 @@ $('.download-btn').click(() =>
 const projectName = $('[name="project-name"]');
 const saveBtn = $('.save-btn');
 saveBtn.click(() => {
-    projectName.val(projectName.val() || 'hepialight-untitled.xml');
-    downloadFile(projectName.val(), blocklyDesigner.getXml());
+    projectName.val(projectName.val() || 'hepialight-untitled');
+    downloadFile(projectName.val() + '.xml', blocklyDesigner.getXml());
 });
 
 $('.zoom-in-btn').click(() => blocklyDesigner.zoomIn());
@@ -62,7 +62,7 @@ $(document.body)
         const reader = new FileReader();
         reader.onload = e => {
             blocklyDesigner.loadXml(e.target.result);
-            projectName.val(file.name);
+            projectName.val(file.name.replace(/\.xml/, ''));
         };
         reader.readAsText(file);
     });
