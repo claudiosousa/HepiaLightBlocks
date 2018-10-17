@@ -1,4 +1,4 @@
-import toolbox from './Toolbox.js';
+import toolbox from './ToolboxConfig.js';
 
 const designerConfiguration = {
     media: '../node_modules/blockly/media/',
