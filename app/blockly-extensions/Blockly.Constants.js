@@ -7,3 +7,5 @@ Blockly.Msg = {
     VARIABLES_HUE: TOOLBOX_COLORS.VARIABLES,
     MATH_HUE: TOOLBOX_COLORS.MATH
 };
+
+Blockly.Scrollbar.scrollbarThickness = 11;

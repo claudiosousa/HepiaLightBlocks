@@ -1,6 +1,5 @@
 .blocklyToolboxDiv {
     background-color: white;
-    border-left: 1px solid #ecf0f1 !important;
     box-shadow: 4px 0 2px -4px rgba(0, 0, 0, 0.12),
         4px 0 2px -4px rgba(0, 0, 0, 0.24);
     font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, sans-serif;
@@ -49,4 +48,24 @@
 }
 .blocklyEditableText > rect {
     fill-opacity: 1;
+}
+
+.blocklyTreeRoot {
+    padding: 0;
+}
+
+.blocklyFlyoutBackground {
+    fill: #4b4949 !important;
+    fill-opacity: 1 !important;
+}
+.blocklyScrollbarHandle {
+    fill: #cecdce;
+    opacity:1;
+}
+
+.blocklyScrollbarHandle:hover,
+.blocklyScrollbarHandle:active {
+    stroke-width: 3;
+    fill: #cecdce;
+    stroke: #cecdce;
 }
