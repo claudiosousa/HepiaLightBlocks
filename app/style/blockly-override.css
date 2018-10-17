@@ -47,3 +47,6 @@
 .blocklyMainBackground {
     stroke-width: 0;
 }
+.blocklyEditableText > rect {
+    fill-opacity: 1;
+}
