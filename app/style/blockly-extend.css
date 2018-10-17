@@ -1,0 +1,45 @@
+.blocklyTreeSelected .blocklyTreeIcon {
+    color: white;
+}
+
+.blocklyTreeIcon {
+    font-size: 1.33333333em;
+    font-family: FontAwesome;
+}
+
+.tree-node-icon-Affichage:before {
+    /*fa-th*/
+    content: "\f00a";
+}
+
+.tree-node-icon-Entrées:before {
+    /*fa-dot-circle-o*/
+    content: "\f192";
+    /*fa-hand-o-u*/
+    content: "\f0a6";
+}
+
+.tree-node-icon-Logique:before {
+    /*fa-microchip*/
+    content: "\f2db";
+}
+
+.tree-node-icon-Boucles:before {
+    /*fa-repeat*/
+    content: "\f01e";
+}
+
+.tree-node-icon-Delai:before {
+    /*fa-hourglass-half*/
+    content: "\f252";
+}
+
+.tree-node-icon-Variables:before {
+    /*fa-fa-align-justify*/
+    content: "\f039";
+}
+
+.tree-node-icon-Mathématique:before {
+    /*fa-calculator*/
+    content: "\f1ec";
+}
