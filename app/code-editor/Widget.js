@@ -3,7 +3,10 @@ import downloadFile from '../tools/downloadFile.js';
 class PythonWidget extends HTMLElement {
     constructor() {
         super();
-        this;
+    }
+    connectedCallback() {
+        this.appendChild($('<pre class="prettyprint">')[0]);
+        this.root = this.firstChild;
     }
 
     setBlockly(blockly) {
@@ -12,7 +15,11 @@ class PythonWidget extends HTMLElement {
     }
 
     displayCode() {
-        this.innerHTML = PR.prettyPrintOne(this.blockly.getPythonCode(), 'py');
+        this.root.innerHTML = PR.prettyPrintOne(
+            this.blockly.getPythonCode(),
+            'py',
+            true
+        );
     }
 
     download() {

@@ -34,13 +34,16 @@ header img {
     width: 200px;
     padding: 0 1rem;
 }
+
 main {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid silver;
+    overflow: hidden;
+    /* avoid browser level touch actions */
+    xtouch-action: none;
 }
 
 footer {
@@ -48,8 +51,9 @@ footer {
     grid-row: 3 / 4;
     display: flex;
     background-color: #fdfdff;
-    border-top:1px solid rgb(223, 223, 223);
+    border-top: 1px solid rgb(223, 223, 223);
 }
+
 .download-area {
     width: 27rem;
     display: flex;
@@ -76,6 +80,7 @@ footer {
 .download-btn span {
     margin-left: 0.5em;
 }
+
 .project-name-area {
     position: relative;
     display: flex;
@@ -88,7 +93,7 @@ footer {
     border-bottom-right-radius: 0;
 }
 
-.zoom-area{
+.zoom-area {
     padding: 0 2rem;
     align-items: center;
     flex-grow: 1;
@@ -102,25 +107,38 @@ footer {
 }
 
 blockly-designer {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    flex: 0 0 auto;
+    /* only manually resize */
+    width: calc(100% - 400px);
+    min-width: calc(100% - 600px);
+    max-width: calc(100% - 200px);
+}
+
+.splitter {
+    flex: 0 0 auto;
+    width: 6px;
+    background: url(node_modules/jquery-resizable-dom/assets/vsizegrip.png) center center no-repeat #535353;
+    cursor: e-resize;
 }
 
 python-widget {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    display: none;
-    margin: 0;
-    padding: 1ex;
-    direction: ltr;
-    border: 1px solid #ccc;
-    overflow: scroll;
-    font-family: monospace;
-    white-space: pre;
-    margin: 1em 0px;
+    flex: 1 1 auto;
 }
 
-body > img {
+python-widget pre.prettyprint {
+    overflow: auto;
+    white-space: pre;
+    font-size: 1rem;
+    line-height: 1;
+    font-family: monospace !important;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+    user-select: none;
+}
+
+body>img {
     position: absolute;
     left: -200px;
 }
@@ -133,6 +151,7 @@ body > img {
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;
 }
+
 .drop-welcome {
     height: 60%;
     width: 60%;
@@ -150,8 +169,4 @@ body > img {
 
 body[dropping='true'] .dropping-file {
     display: block;
-}
-
-blockly-designer #\:1 .blocklyTreeIconNone{
-    background-color: red;
 }

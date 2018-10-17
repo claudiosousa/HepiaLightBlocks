@@ -1,4 +1,4 @@
-import './blockly-designer/index.js';
+import './components/blockly-designer/index.js';
 import './code-editor/Widget.js';
 import downloadFile from './tools/downloadFile.js';
 
@@ -66,3 +66,10 @@ $(document.body)
         };
         reader.readAsText(file);
     });
+
+$('blockly-designer').resizable({
+    handleSelector: '.splitter',
+    resizeHeight: false,
+    resizeWidthFrom: 'right',
+    onDragEnd: () => blocklyDesigner.resize()
+});

@@ -17,12 +17,13 @@
     },
     "homepage": "https://github.com/claudiosousa/hepialight-blockly#readme",
     "dependencies": {
-        "blockly": "github:google/blockly",
+        "blockly": "github:google/blockly#1abd6c5431fc018639672eab989701730c0910cc",
         "bootstrap": "^4.1.3",
-        "code-prettify": "github:google/code-prettify",
+        "code-prettify": "github:google/code-prettify#453bd5f51e61245339b738b1bbdd42d7848722ba",
         "font-awesome": "^4.7.0",
         "http-server": "^0.11.1",
         "jquery": "^3.3.1",
+        "jquery-resizable-dom": "github:rickstrahl/jquery-resizable#0.32",
         "lodash": "^4.17.11"
     }
 }

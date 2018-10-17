@@ -6,6 +6,7 @@
     <title>Hepia Light App Developer</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/code-prettify/styles/sunburst.css">
     <link rel="stylesheet" href="style/app.css">
     <link rel="stylesheet" href="style/blockly-override.css">
     <link rel="stylesheet" href="style/blockly-extend.css">
@@ -23,6 +24,8 @@
     <main>
 
         <blockly-designer></blockly-designer>
+
+        <div class="splitter"></div>
 
         <python-widget></python-widget>
 
@@ -55,10 +58,12 @@
         <div class="drop-welcome"><span>Ouvrir le fichier</span>
         </div>
     </div>
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-resizable-dom/dist/jquery-resizable.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
 
-    <script src="node_modules/code-prettify/loader/run_prettify.js"></script>
+    <script src="node_modules/code-prettify/src/prettify.js"></script>
     <script src="node_modules/blockly/blockly_compressed.js"></script>
     <script src="node_modules/blockly/blocks_compressed.js"></script>
     <script src="node_modules/blockly/msg/js/fr.js"></script>

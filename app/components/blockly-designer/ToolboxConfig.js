@@ -1,5 +1,5 @@
-import '../blockly-extensions/index.js';
-import { TOOLBOX_COLORS } from '../blockly-extensions/Constants.js';
+import '../../blockly-extensions/index.js';
+import { TOOLBOX_COLORS } from '../../blockly-extensions/Constants.js';
 
 const toolboxConfig = [
     {
