@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>Hepia Light App Developer</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/app.css">
     <link rel="stylesheet" href="blockly-extensions/fields/LegImageField.css">
 </head>
@@ -11,23 +13,38 @@
 <body>
 
     <header>
-        <a href="https://www.hesge.ch/hepia/">
-            <img target="_blank" src="images/logo_hepia_couleur_rvb.png" alt="hepia">
+        <a target="_blank" href="https://www.hesge.ch/hepia/">
+            <img src="images/logo_hepia_negatif.png" alt="hepia">
         </a>
     </header>
 
     <main>
+
         <blockly-designer></blockly-designer>
 
         <python-widget></python-widget>
-        <div id="ctrlPanel">
+
+    </main>
+
+    <footer>
+        <div class="download-area">
+            <button type="button" class="btn btn-lg btn-block download-btn">
+                <i class="fa fa-download"></i>
+                <span>Download</span>
+            </button>
+        </div>
+        <div class="project-name-area">
+            <input type="text" class="form-control" placeholder="Choisit un nom de projet">
+            <button class="btn save-btn btn-primary" type="button">
+                <i class="fa fa-save"></i>
+            </button>
+        </div>
+        <div style="display:none">
             <button id="downloadBtn">Download</button>
             <button id="saveBtn">Save</button>
             <button id="loadBtn">Load</button>
         </div>
-    </main>
-
-    <footer></footer>
+    </footer>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
