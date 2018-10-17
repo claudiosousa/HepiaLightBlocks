@@ -60,6 +60,14 @@ class BlocklyDesigner extends HTMLElement {
         const xml = Blockly.Xml.textToDom(xmlText);
         Blockly.Xml.domToWorkspace(xml, this.blockly);
     }
+
+    zoomIn() {
+        this.blockly.zoomCenter(1);
+    }
+
+    zoomOut() {
+        this.blockly.zoomCenter(-1);
+    }
 }
 
 customElements.define('blockly-designer', BlocklyDesigner);

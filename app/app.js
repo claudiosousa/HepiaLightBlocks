@@ -19,15 +19,40 @@ saveBtn.click(() => {
 });
 
 //ondrop="dropHandler(event);" ondragover="dragOverHandler(event);
+
+const hideDropArea = (timeout = 1000) =>
+    (document.body.hideDropAreaTimeout = setTimeout(
+        () => document.body.removeAttribute('dropping'),
+        timeout
+    ));
+
+const showDropArea = () => {
+    clearTimeout(document.body.hideDropAreaTimeout);
+    document.body.setAttribute('dropping', 'true');
+};
+
 $(document.body)
     .on('dragover', ({ originalEvent: e }) => {
         e.stopPropagation();
         e.preventDefault();
+        if (e.dataTransfer.items.length < 1) return;
+        const file = e.dataTransfer.items[0];
+        if (file.kind != 'file' || file.type != 'text/xml') {
+            e.dataTransfer.dropEffect = 'none';
+            return;
+        }
         e.dataTransfer.dropEffect = 'copy';
+        showDropArea();
+    })
+    .on('dragleave', ({ originalEvent: e }) => {
+        hideDropArea();
+        e.stopPropagation();
+        e.preventDefault();
     })
     .on('drop', ({ originalEvent: e }) => {
         e.stopPropagation();
         e.preventDefault();
+        hideDropArea(0);
 
         if (e.dataTransfer.files.length < 1) return;
         const file = e.dataTransfer.files[0];
