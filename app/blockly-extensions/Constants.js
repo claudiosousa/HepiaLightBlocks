@@ -28,5 +28,5 @@ export const TOOLBOX_COLORS = {
     LOOPS: '#00aa00',
     DELAY: '#5c2d91',
     VARIABLES: '#dc143c',
-    MATH: '#ffffff'
+    MATH: '#9400d3'
 };

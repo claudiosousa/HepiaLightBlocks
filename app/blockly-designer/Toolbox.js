@@ -135,6 +135,26 @@ const toolboxConfig = [
         name: 'Variables',
         custom: 'VARIABLE',
         color: '%{BKY_VARIABLES_HUE}'
+    },
+    {
+        name: 'Mathematique',
+        color: '%{BKY_MATH_HUE}',
+        blocks: [
+            {
+                type: 'math_number',
+                field: {
+                    name: 'NUM',
+                    text: 7
+                }
+            },
+            'math_arithmetic',
+            'math_single',
+            'math_trig',
+            'math_constant',
+            'math_number_property',
+            'math_round',
+            'math_modulo'
+        ]
     }
 ];
 
