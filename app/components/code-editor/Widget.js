@@ -1,4 +1,4 @@
-import downloadFile from '../tools/downloadFile.js';
+import downloadFile from '../../tools/downloadFile.js';
 
 class PythonWidget extends HTMLElement {
     constructor() {

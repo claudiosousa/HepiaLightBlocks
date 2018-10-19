@@ -1,5 +1,5 @@
 import './components/blockly-designer/index.js';
-import './code-editor/Widget.js';
+import './components/code-editor/Widget.js';
 import downloadFile from './tools/downloadFile.js';
 
 const blocklyDesigner = $('blockly-designer')[0];

@@ -12,7 +12,7 @@ const ScrollText = {
     python: block => {
         const text = block.getFieldValue('text');
 
-        return `afficher_texte('${text}')`;
+        return `afficher_texte('${text}')\n`;
     }
 };
 
