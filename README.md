@@ -16,7 +16,7 @@ npm install # Install dependencies
 npm start # Run the http server
 ```
 
-Make sure to use a browser that supports [Web Components](https://caniuse.com/#search=Web%20Components).
+Make sure to use a browser that [supports](https://caniuse.com/#search=Web%20Components) Web Components.
 
 ## Getting started
 
