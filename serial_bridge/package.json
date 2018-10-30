@@ -1,0 +1,21 @@
+{
+    "name": "hepialight",
+    "version": "1.0.0",
+    "description": "Web to serial bridge",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/claudiosousa/hepialight-blockly/issues"
+    },
+    "homepage": "https://github.com/claudiosousa/hepialight-blockly#readme",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "express": "^4.16.4",
+        "serialport": "^7.0.2"
+    }
+}
