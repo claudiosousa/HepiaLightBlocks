@@ -16,7 +16,7 @@ const setCodeToSerial = _.debounce(
         });
     },
     2000,
-    { leading: true, trailing: true }
+    { leading: false, trailing: true }
 );
 
 blocklyDesigner.addChangeListener(() =>

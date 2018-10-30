@@ -6,7 +6,6 @@ class HepiaBoard {
     connect() {
         this.port = new SerialPort('/dev/ttyACM0');
         this.port.on('error', err => console.log('Error: ', err.message));
-        //this.port.on('data', data => console.log('Data:', data.toString('utf8')));
     }
 
     async destroy() {
@@ -44,14 +43,5 @@ class HepiaBoard {
         });
     }
 }
-
-//setTimeout(() => wr    execute('\x0D');
-
-// const parser = new    execute('\x0D');
-
-// port.pipe(parser);    execute('\x0D');
-
-// var count = 0;
-// parser.on('data', data => console.log('Data:', data));
 
 module.exports = HepiaBoard;

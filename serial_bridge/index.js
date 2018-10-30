@@ -21,6 +21,5 @@ app.use(express.static('../webapp'));
 app.listen(webport, () => {
     console.log(`Example app listening on port ${webport}!`);
     const opn = require('opn');
-
     opn(`http://localhost:${webport}`);
 }).setTimeout(5000);
