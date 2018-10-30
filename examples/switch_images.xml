@@ -1,11 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_repeat_ext" id="/E!q?aNb3jHn{~g+#G8v" x="262" y="13">
-    <value name="TIMES">
-      <block type="math_number" id="}[*0ZLy,Hf]f,rWN*1Zn">
-        <field name="NUM">10</field>
-      </block>
-    </value>
-    <statement name="DO">
+  <block type="PourToujours" id="@$FGNtu/T|;M7D2S#j?z" x="293" y="23">
+    <statement name="instructions">
       <block type="LedImage" id="#t,zv}+^,Vn~qLaB6TL{">
         <field name="color">#4DBEEE</field>
         <field name="image">RRRRRRRRRRR........RR.OOOOOO.RR.O....O.RR.O.CC.O.RR.O.CC.O.RR.O....O.RR.OOOOOO.RR........RRRRRRRRRRR</field>
