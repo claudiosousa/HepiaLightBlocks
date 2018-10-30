@@ -1,0 +1,10 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="ScrollText" id="d-/g@^4%gHSM/bZv!F6B" x="68" y="293">
+    <field name="text">Bonjour</field>
+    <next>
+      <block type="ScrollText" id="BjdN#3L_+b!X|kG95{eA">
+        <field name="text">HEPIA LIGHT!</field>
+      </block>
+    </next>
+  </block>
+</xml>
