@@ -5,6 +5,24 @@ import downloadFile from './tools/downloadFile.js';
 const blocklyDesigner = $('blockly-designer')[0];
 const pythonWidget = $('python-widget')[0];
 
+const setCodeToSerial = _.debounce(
+    code => {
+        fetch('write', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            body: JSON.stringify({ code })
+        });
+    },
+    2000,
+    { leading: true, trailing: true }
+);
+
+blocklyDesigner.addChangeListener(() =>
+    setCodeToSerial(blocklyDesigner.getPythonCode())
+);
+
 pythonWidget.setBlockly(blocklyDesigner);
 
 $('.download-btn').click(() =>
