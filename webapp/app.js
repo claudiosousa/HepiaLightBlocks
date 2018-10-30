@@ -7,7 +7,7 @@ const pythonWidget = $('python-widget')[0];
 
 const setCodeToSerial = _.debounce(
     code => {
-        fetch('http://localhost:3000/write', {
+        fetch('write', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'

@@ -1,12 +1,12 @@
+'use strict';
+
 const express = require('express'),
-    cors = require('cors'),
     app = express(),
-    webport = 3000;
+    webport = 8765;
 
 const HepiaBoard = require('./HepiaBoard.js');
 
 app.use(express.json());
-app.use(cors({ origin: 'http://127.0.0.1:8765' }));
 
 app.post('/write', async (req, res) => {
     let board = new HepiaBoard();
@@ -16,7 +16,11 @@ app.post('/write', async (req, res) => {
     res.send();
 });
 
-const server = app.listen(webport, () =>
-    console.log(`Example app listening on port ${webport}!`)
-);
-server.setTimeout(5000);
+app.use(express.static('../webapp'));
+
+app.listen(webport, () => {
+    console.log(`Example app listening on port ${webport}!`);
+    const opn = require('opn');
+
+    opn(`http://localhost:${webport}`);
+}).setTimeout(5000);

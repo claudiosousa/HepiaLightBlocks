@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "Block based web app for the [HEPIA](http://hepia.hesge.ch) education board [hepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).",
     "scripts": {
-        "postinstall": "cd webapp && npm i",
-        "start": "cd webapp && npm start",
+        "postinstall": "cd webapp && npm i && cd ../serial_bridge && npm i",
+        "start": "cd serial_bridge && npm start",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prettify": "node_modules/prettier/bin-prettier.js  \"**/*.{js,json,scss}\" --write"
     },
