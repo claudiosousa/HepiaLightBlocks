@@ -1,58 +1,58 @@
 import { TOOLBOX_COLORS } from '../../Constants.js';
 
-const Penche = {
+const BouttonPresse = {
     init: function() {
         this.appendDummyInput()
-            .appendField('Penche')
+            .appendField('Bouton pressé')
             .appendField(
                 new Blockly.FieldDropdown([
                     [
                         {
                             src:
-                                'blockly-extensions/blocks/Penche/images/board_top.png',
+                                'components/blockly-extensions/blocks/BouttonPresse/images/board_button1.png',
                             width: 15,
                             height: 15
                         },
-                        'avant'
+                        'haut_gauche'
                     ],
                     [
                         {
                             src:
-                                'blockly-extensions/blocks/Penche/images/board_right.png',
+                                'components/blockly-extensions/blocks/BouttonPresse/images/board_button2.png',
                             width: 15,
                             height: 15
                         },
-                        'droite'
+                        'haut_droite'
                     ],
                     [
                         {
                             src:
-                                'blockly-extensions/blocks/Penche/images/board_bottom.png',
+                                'components/blockly-extensions/blocks/BouttonPresse/images/board_button3.png',
                             width: 15,
                             height: 15
                         },
-                        'arriere'
+                        'bas_gauche'
                     ],
                     [
                         {
                             src:
-                                'blockly-extensions/blocks/Penche/images/board_left.png',
+                                'components/blockly-extensions/blocks/BouttonPresse/images/board_button4.png',
                             width: 15,
                             height: 15
                         },
-                        'gauche'
+                        'bas_droite'
                     ]
                 ]),
-                'penche_position'
+                'button_position'
             );
         this.setOutput(true, 'Boolean');
         this.setColour(TOOLBOX_COLORS.INPUT);
     },
     python: block => {
-        const button = block.getFieldValue('penche_position');
-        return [`penche_${button}()`, 1];
+        const button = block.getFieldValue('button_position');
+        return [`touche_${button}()`, 1];
     }
 };
 
-Blockly.Blocks.Penche = Penche;
-Blockly.Python.Penche = Penche.python;
+Blockly.Blocks.BouttonPresse = BouttonPresse;
+Blockly.Python.BouttonPresse = BouttonPresse.python;
