@@ -121,6 +121,8 @@ textDict = {
 }
 
 def afficher_texte(text, color=ROUGE, speed=0.1):
+    eteindre_tout()
+
     width = 5
     height = 9
     h_offset = 9
