@@ -71,5 +71,31 @@ The application aesthetics was strongly inspired by [MakeCode](https://www.micro
 
 # Known errors
 
+## Error: Device or resource busy, cannot open /dev/ttyACM0
+
 In Linux, (ModemManager will try to comunicate)[https://bugs.launchpad.net/modemmanager/+bug/700261] with the HepiaLight board
 when connected. Please wait 10-15s after pluging the card to compensate for this.
+
+## Permission issues
+
+Be sure to add your user to the device group.
+
+To check the device group execute `ls -al /dev/tty*`
+
+Example under Ubuntu:
+
+```{.bash}
+ls -al /dev/ttyACM0
+crw-rw---- 1 root dialout 166, 0 Nov  2 16:17 /dev/ttyACM0
+```
+
+In the example above the group is _dialout_.
+Under Archlinux it will be _uucp_.
+
+To add your user to the group, execute:
+
+```{.bash}
+sudo usermod -a -G dialout $USER
+```
+
+replace _dialout_ by the group name.
