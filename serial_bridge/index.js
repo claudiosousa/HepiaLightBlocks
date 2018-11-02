@@ -9,10 +9,14 @@ const HepiaBoard = require('./HepiaBoard.js');
 app.use(express.json());
 
 app.post('/write', async (req, res) => {
-    let board = new HepiaBoard();
-    await board.connect();
-    await board.execute(req.body.code);
-    await board.destroy();
+    try {
+        let board = new HepiaBoard();
+        await board.connect();
+        await board.execute(req.body.code);
+        await board.destroy();
+    } catch (err) {
+        console.log(`Cannot write to board: ${err}`);
+    }
     res.send();
 });
 

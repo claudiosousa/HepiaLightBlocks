@@ -1,10 +1,21 @@
 const SerialPort = require('serialport');
+const VENDOR_ID = '1f00';
+const PRODUCT_ID = '2012';
 
 class HepiaBoard {
     constructor() {}
 
-    connect() {
-        this.port = new SerialPort('/dev/ttyACM0');
+    async findHepiaLightCom() {
+        const ports = await SerialPort.list();
+        return ports.find(
+            port => port.vendorId == VENDOR_ID && port.productId == PRODUCT_ID
+        );
+    }
+
+    async connect() {
+        const comPort = await this.findHepiaLightCom();
+        if (!comPort) throw 'No hepia light card found';
+        this.port = new SerialPort(comPort.comName);
         this.port.on('error', err => console.log('Error: ', err.message));
     }
 

@@ -68,3 +68,8 @@ The application has been and somewhat tested in the following environment:
 This application relies heavily on [blockly](https://developers.google.com/blockly/) (by Google) to handle the block based UI.
 
 The application aesthetics was strongly inspired by [MakeCode](https://www.microsoft.com/en-us/makecode) (by Microsoft)
+
+# Known errors
+
+In Linux, (ModemManager will try to comunicate)[https://bugs.launchpad.net/modemmanager/+bug/700261] with the HepiaLight board
+when connected. Please wait 10-15s after pluging the card to compensate for this.
