@@ -137,7 +137,7 @@ const toolboxConfig = [
         color: '%{BKY_VARIABLES_HUE}'
     },
     {
-        name: 'Mathématique',
+        name: 'Mathématiques',
         color: '%{BKY_MATH_HUE}',
         blocks: [
             {
