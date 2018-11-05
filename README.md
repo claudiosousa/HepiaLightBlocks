@@ -77,7 +77,7 @@ In Linux, (ModemManager will try to comunicate)[https://bugs.launchpad.net/modem
 when connected. Please wait 10-15s after pluging the card to compensate for this.
 
 Optionally, you can prevent ModemManager from communicating with the board.
-To do this, copy the the udev rules file `udevrules/99-hepialight.rules`\_ into `/etc/udev/rules.d`.
+To do this, copy the the udev rules file `udevrules/99-hepialight.rules` into `/etc/udev/rules.d`.
 
 Apply these changes by running:
 
