@@ -27,7 +27,14 @@ class HepiaBoard {
 
     async execute(code) {
         return new Promise(resolve => {
-            let commandsToExecute = ['\x03', '\x03', 'eteindre_tout()', '\x0D'];
+            let commandsToExecute = [
+                '\x03',
+                '\x03',
+                'allumer_tout(BLEU)',
+                '\x0D',
+                'eteindre_tout()',
+                '\x0D'
+            ];
             for (let line of code.split('\n')) {
                 if (!line || line == '\r') break;
                 commandsToExecute.push(line);
@@ -47,7 +54,7 @@ class HepiaBoard {
                 let cmd = commandsToExecute.shift();
                 this.port.write(cmd);
                 this.port.flush(() =>
-                    this.port.drain(() => setTimeout(executeNext, 100))
+                    this.port.drain(() => setTimeout(executeNext, 200))
                 );
             };
             executeNext();
