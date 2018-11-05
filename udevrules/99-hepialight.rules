@@ -1,0 +1,4 @@
+SUBSYSTEMS=="usb", ATTR{idVendor}=="1f00", ATTR{idProduct}=="2012", MODE:="0666"
+SUBSYSTEM=="usb", ATTRS{idProduct}=="2012", ATTRS{idVendor}=="1f00", MODE="0660", GROUP="dialout"
+ATTRS{idVendor}=="1f00", ENV{ID_MM_DEVICE_IGNORE}="1"
+ATTRS{idVendor}=="1f00", MODE="0660", GROUP="adm"
