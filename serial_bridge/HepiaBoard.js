@@ -47,7 +47,7 @@ class HepiaBoard {
                 let cmd = commandsToExecute.shift();
                 this.port.write(cmd);
                 this.port.flush(() =>
-                    this.port.drain(() => setTimeout(executeNext, 50))
+                    this.port.drain(() => setTimeout(executeNext, 100))
                 );
             };
             executeNext();
