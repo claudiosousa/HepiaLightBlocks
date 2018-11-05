@@ -8,15 +8,19 @@ const HepiaBoard = require('./HepiaBoard.js');
 
 app.use(express.json());
 
+let board = null;
 app.post('/write', async (req, res) => {
+    if (board) return res.status(503).send('Busy');
+
     try {
-        let board = new HepiaBoard();
+        board = new HepiaBoard();
         await board.connect();
         await board.execute(req.body.code);
         await board.destroy();
     } catch (err) {
         console.log(`Cannot write to board: ${err}`);
     }
+    board = null;
     res.send();
 });
 
@@ -26,4 +30,4 @@ app.listen(webport, () => {
     console.log(`Example app listening on port ${webport}!`);
     const opn = require('opn');
     opn(`http://localhost:${webport}`);
-}).setTimeout(5000);
+}).setTimeout(30000);

@@ -5,29 +5,27 @@ import downloadFile from './tools/downloadFile.js';
 const blocklyDesigner = $('blockly-designer')[0];
 const pythonWidget = $('python-widget')[0];
 
-const setCodeToSerial = _.debounce(
-    code => {
-        fetch('write', {
+pythonWidget.setBlockly(blocklyDesigner);
+
+$('.download-btn').click(() =>
+    downloadFile('MAIN.PY', blocklyDesigner.getPythonCode())
+);
+
+const executeBtn = $('.execute-btn');
+executeBtn.click(async () => {
+    const code = blocklyDesigner.getPythonCode();
+    executeBtn.attr('disabled', 'disabled');
+    try {
+        await fetch('write', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
             },
             body: JSON.stringify({ code })
         });
-    },
-    1000,
-    { leading: false, trailing: true }
-);
-
-blocklyDesigner.addChangeListener(() =>
-    setCodeToSerial(blocklyDesigner.getPythonCode())
-);
-
-pythonWidget.setBlockly(blocklyDesigner);
-
-$('.download-btn').click(() =>
-    downloadFile('MAIN.PY', blocklyDesigner.getPythonCode())
-);
+    } catch (err) {}
+    executeBtn.removeAttr('disabled');
+});
 
 const projectName = $('[name="project-name"]');
 const saveBtn = $('.save-btn');
