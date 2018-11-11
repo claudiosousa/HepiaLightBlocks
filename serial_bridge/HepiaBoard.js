@@ -4,6 +4,7 @@ const PRODUCT_ID = '2012';
 const INSTRUCTION_INTERVAL = 50;
 const EOL = '\x0A\x0D';
 const BREAK = '\x03';
+const INDENTATION = 2;
 
 class HepiaBoard {
     constructor() {
@@ -22,11 +23,51 @@ class HepiaBoard {
         if (!comPort) throw 'No hepia light card found';
         this.port = new SerialPort(comPort.comName);
         this.port.on('error', err => this.onError(err));
+        this.port.on('data', data => this.onData(data));
     }
 
     onError(err) {
         this.errorRaised = true;
         console.log('Error: ', err.message);
+    }
+
+    onData(data) {
+        process.stdout.write(data.toString('utf8'));
+    }
+
+    getIndentation(line) {
+        for (let i = 0; i < line.length; i++) if (line[i] != ' ') return i;
+        return 0;
+    }
+
+    splitCodeIntoCommands(code) {
+        let commands = [
+            EOL,
+            BREAK,
+            'eteindre_tout()',
+            EOL,
+            '# NEW PROGRAM',
+            EOL
+        ];
+        let lastIdentation = 0;
+        for (let line of code.split('\n')) {
+            if (!line || line == '\r') break;
+            let indentation = this.getIndentation(line);
+            while (indentation < lastIdentation) {
+                commands.push(EOL);
+                lastIdentation -= INDENTATION;
+            }
+            lastIdentation = indentation;
+            commands.push(line);
+            commands.push(EOL);
+        }
+        while (lastIdentation > 0) {
+            commands.push(EOL);
+            lastIdentation -= INDENTATION;
+        }
+        commands.push(EOL);
+
+        return commands;
     }
 
     async destroy() {
@@ -45,23 +86,7 @@ class HepiaBoard {
 
     async execute(code) {
         return new Promise(resolve => {
-            let commandsToExecute = [
-                BREAK,
-                BREAK,
-                'allumer_tout(BLEU)',
-                EOL,
-                'eteindre_tout()',
-                EOL
-            ];
-            for (let line of code.split('\n')) {
-                if (!line || line == '\r') break;
-                commandsToExecute.push(line);
-                commandsToExecute.push(EOL);
-            }
-            commandsToExecute.push('');
-            commandsToExecute.push(EOL);
-            commandsToExecute.push('');
-            commandsToExecute.push(EOL);
+            let commandsToExecute = this.splitCodeIntoCommands(code);
 
             const executeNext = () => {
                 if (this.errorRaised || commandsToExecute.length == 0) {
@@ -78,6 +103,7 @@ class HepiaBoard {
                 this.port.flush();
                 this.port.drain();
             };
+
             this.executionInterval = setInterval(
                 executeNext,
                 INSTRUCTION_INTERVAL
