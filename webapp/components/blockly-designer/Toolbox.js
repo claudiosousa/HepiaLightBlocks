@@ -6,8 +6,6 @@ const toolboxConfig = [
         name: 'Affichage',
         color: TOOLBOX_COLORS.DISPLAY,
         blocks: [
-            'LedImage',
-            'ScrollText',
             ...['AllumerLed', 'EteindreLed'].map(n => ({
                 type: n,
                 value: [
@@ -47,11 +45,13 @@ const toolboxConfig = [
                         }
                     }
                 ]
-            }))
+            })),
+            'LedImage',
+            'ScrollText'
         ]
     },
     {
-        name: 'Entrées',
+        name: 'Événements',
         color: TOOLBOX_COLORS.INPUT,
         blocks: ['BouttonPresse', 'Penche']
     },
@@ -200,4 +200,5 @@ const buildFunctions = {
     </xml>`
 };
 
-export default buildFunctions.toolbox(toolboxConfig);
+const toolbox = buildFunctions.toolbox(toolboxConfig);
+export default toolbox;

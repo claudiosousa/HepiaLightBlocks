@@ -1,3 +1,3 @@
-import BlocklyDesigner from './Controller.js';
+import BlocklyDesigner from './Designer.js';
 
 export default BlocklyDesigner;

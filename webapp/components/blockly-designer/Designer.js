@@ -1,34 +1,21 @@
-import toolbox from './ToolboxConfig.js';
-
-const designerConfiguration = {
-    media: '../node_modules/blockly/media/',
-    toolbox,
-    zoom: {
-        controls: false,
-        wheel: true,
-        startScale: 1.0,
-        maxScale: 3,
-        minScale: 0.3,
-        scaleSpeed: 1.2
-    },
-    grid: {
-        spacing: 45,
-        length: 7,
-        colour: 'rgba(189, 195, 199, 0.30)',
-        snap: true
-    },
-    trashcan: false
-};
+import configuration from './DesignerConfiguration.js';
 
 class BlocklyDesigner extends HTMLElement {
+    // retrieves the current BlocklyDesigner designer instance
+    static instance() {
+        return;
+    }
+
     constructor() {
         super();
+
+        BlocklyDesigner.instance = this;
 
         this.render();
     }
 
     render() {
-        this.blockly = Blockly.inject(this, designerConfiguration);
+        this.blockly = Blockly.inject(this, configuration);
 
         window.addEventListener('resize', () => this.resize(), false);
         this.resize();

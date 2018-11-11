@@ -3,7 +3,7 @@ import { TOOLBOX_COLORS } from '../../Constants.js';
 const Penche = {
     init: function() {
         this.appendDummyInput()
-            .appendField('Penche')
+            .appendField('Penché')
             .appendField(
                 new Blockly.FieldDropdown([
                     [

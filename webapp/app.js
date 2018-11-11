@@ -5,8 +5,6 @@ import downloadFile from './tools/downloadFile.js';
 const blocklyDesigner = $('blockly-designer')[0];
 const pythonWidget = $('python-widget')[0];
 
-pythonWidget.setBlockly(blocklyDesigner);
-
 $('.download-btn').click(() =>
     downloadFile('MAIN.PY', blocklyDesigner.getPythonCode())
 );
