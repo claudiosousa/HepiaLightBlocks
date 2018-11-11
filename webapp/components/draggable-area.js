@@ -1,4 +1,5 @@
 import BlocklyDesigner from './blockly-designer/index.js';
+import ProjectName from './project-name.js';
 
 const INNER_HTML = `
 <style>
@@ -82,7 +83,7 @@ class DroppableArea extends HTMLBodyElement {
         const reader = new FileReader();
         reader.onload = e => {
             BlocklyDesigner.instance.loadXml(e.target.result);
-            projectName.val(file.name.replace(/\.xml/, ''));
+            ProjectName.instance.setProjectName(file.name.replace(/\.xml/, ''));
         };
         reader.readAsText(file);
     }

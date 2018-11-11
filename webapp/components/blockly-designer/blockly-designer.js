@@ -2,14 +2,14 @@ import configuration from './designer-configuration.js';
 
 class BlocklyDesigner extends HTMLElement {
     // retrieves the current BlocklyDesigner designer instance
-    static instance() {
-        return;
+    static get instance() {
+        return BlocklyDesigner._instance;
     }
 
     constructor() {
         super();
 
-        BlocklyDesigner.instance = this;
+        BlocklyDesigner._instance = this;
 
         this.render();
     }
