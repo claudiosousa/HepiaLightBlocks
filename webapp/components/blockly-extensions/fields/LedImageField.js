@@ -149,7 +149,7 @@ export default class LedImageField extends Blockly.Field {
                     this.sourceBlock_,
                     'field',
                     this.name,
-                    this.colorArray,
+                    [],
                     this.colorArray
                 )
             );
