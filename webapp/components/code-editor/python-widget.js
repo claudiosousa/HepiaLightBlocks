@@ -5,24 +5,21 @@ class PythonWidget extends HTMLElement {
     connectedCallback() {
         this.appendChild($('<pre class="prettyprint">')[0]);
         this.root = this.firstChild;
-        this.setBlockly(BlocklyDesigner.instance);
-    }
-
-    setBlockly(blockly) {
-        this.blockly = blockly;
-        this.blockly.addChangeListener(code => this.displayCode(code));
+        BlocklyDesigner.instance.addChangeListener(code =>
+            this.displayCode(code)
+        );
     }
 
     displayCode() {
         this.root.innerHTML = PR.prettyPrintOne(
-            this.blockly.getPythonCode(),
+            BlocklyDesigner.instance.getPythonCode(),
             'py',
             true
         );
     }
 
     download() {
-        downloadFile('MAIN.PY', this.blockly.getPythonCode());
+        downloadFile('MAIN.PY', BlocklyDesigner.instance.getPythonCode());
     }
 }
 

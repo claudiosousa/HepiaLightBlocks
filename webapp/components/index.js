@@ -4,3 +4,4 @@ import './code-editor/python-widget.js';
 import './buttons/index.js';
 import './draggable-area.js';
 import './project-name.js';
+import './auto-save.js';
