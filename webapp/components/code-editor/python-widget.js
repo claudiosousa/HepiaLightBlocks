@@ -1,5 +1,5 @@
 import BlocklyDesigner from '../blockly-designer/index.js';
-import { downloadFile } from '../tools/fileTools.js';
+import { downloadFile } from '../tools/file-tools.js';
 
 class PythonWidget extends HTMLElement {
     connectedCallback() {

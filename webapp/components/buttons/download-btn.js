@@ -1,4 +1,4 @@
-import { downloadFile } from '../tools/fileTools.js';
+import { downloadFile } from '../tools/file-tools.js';
 import BlocklyDesigner from '../blockly-designer/index.js';
 
 class DownloadBtn extends HTMLButtonElement {

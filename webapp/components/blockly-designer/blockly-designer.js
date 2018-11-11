@@ -1,4 +1,4 @@
-import configuration from './DesignerConfiguration.js';
+import configuration from './designer-configuration.js';
 
 class BlocklyDesigner extends HTMLElement {
     // retrieves the current BlocklyDesigner designer instance

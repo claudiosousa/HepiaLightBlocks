@@ -202,15 +202,6 @@ body>img {
     left: -200px;
 }
 
-.dropping-file {
-    display: none;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    z-index: 9999;
-}
-
 .drop-welcome {
     height: 60%;
     width: 60%;
@@ -224,8 +215,4 @@ body>img {
     align-items: center;
     color: #33b5e5;
     font-size: 4rem;
-}
-
-body[dropping='true'] .dropping-file {
-    display: block;
 }
