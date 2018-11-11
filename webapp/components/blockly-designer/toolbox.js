@@ -6,6 +6,8 @@ const toolboxConfig = [
         name: 'Affichage',
         color: TOOLBOX_COLORS.DISPLAY,
         blocks: [
+            'EteindreTout',
+            'AllumerTout',
             ...['AllumerLed', 'EteindreLed'].map(n => ({
                 type: n,
                 value: [

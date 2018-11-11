@@ -173,7 +173,7 @@ def allumer_colonne(num_colonne, couleur):
         screen.set_led((num_colonne, j), couleur)
 
 def allumer_led(pos_x, pos_y, couleur):
-    screen.set_led((pos_x, pos_y), couleur)
+    screen.set_led((int(pos_x), int(pos_y)), couleur)
 
 def eteindre_led(pos_x, pos_y):
     screen.set_led((pos_x, pos_y), 0)

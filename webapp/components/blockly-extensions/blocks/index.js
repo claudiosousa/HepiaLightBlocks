@@ -1,10 +1,12 @@
 import './AllumerColonne.js';
 import './AllumerLed.js';
 import './AllumerLigne.js';
+import './AllumerTout.js';
 import './AttendreS.js';
 import './AttendreMs.js';
 import './BouttonPresse/BoutonPresse.js';
 import './EteindreLed.js';
+import './EteindreTout.js';
 import './LedImage.js';
 import './Penche/Penche.js';
 import './PourToujours.js';

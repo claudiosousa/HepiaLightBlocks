@@ -1,0 +1,52 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_repeat_ext" id="m=k|u{06icypydYON/-A" x="248" y="94">
+    <value name="TIMES">
+      <block type="math_number" id="b+SmWAGm^`Yx1/x{BrJ)">
+        <field name="NUM">10</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="AllumerTout" id="^hG.rtITE@geg{WOBy(d">
+        <field name="color">#A2142F</field>
+        <next>
+          <block type="AttendreS" id="3=c:oEA$}.%S1c_O_Mmn">
+            <field name="s">1</field>
+            <next>
+              <block type="AllumerTout" id="V=sprV$/~YmXT8Ri`)2H">
+                <field name="color">#000099</field>
+                <next>
+                  <block type="AttendreS" id="2Eh@JGgtYYbuJo[Rvwpd">
+                    <field name="s">1</field>
+                    <next>
+                      <block type="AllumerTout" id="]$]~^F~Wa.?Zy~seuxQF">
+                        <field name="color">#003300</field>
+                        <next>
+                          <block type="AttendreS" id="x:@y3Ba{+Nqde/mJGMRZ">
+                            <field name="s">1</field>
+                            <next>
+                              <block type="AllumerTout" id="3WZ~Qgojzzy;(IALU@gS">
+                                <field name="color">#ffcc00</field>
+                                <next>
+                                  <block type="AttendreS" id="hYMC]khNc]K.@i#?cb:?">
+                                    <field name="s">1</field>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="EteindreTout" id="$],j^IGik;fr8.rWBWx9"></block>
+    </next>
+  </block>
+</xml>
