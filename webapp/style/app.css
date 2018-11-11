@@ -68,8 +68,8 @@ footer {
     align-items: center;
 }
 
-.download-btn,
-.execute-btn {
+[is="download-btn"],
+[is="execute-btn"] {
     max-width: 300px;
     font-size: 1.42857143rem;
     font-weight: 700;
@@ -77,11 +77,11 @@ footer {
     margin-top: 0 !important;
 }
 
-.execute-btn {
+[is="execute-btn"] {
     background-color: hsla(134, 72%, 33%, 1);
 }
 
-.execute-btn:hover {
+[is="execute-btn"]:hover {
     background-color: hsla(134, 72%, 25%, 1);
 }
 
@@ -89,19 +89,19 @@ footer {
     display: none;
 }
 
-.execute-btn:disabled .icon-disabled {
+[is="execute-btn"]:disabled .icon-disabled {
     display: inline-block;
 }
 
-.execute-btn:disabled .icon-enabled {
+[is="execute-btn"]:disabled .icon-enabled {
     display: none;
 }
 
-.download-btn {
+[is="download-btn"] {
     background-color: hsla(300, 100%, 25%, 1);
 }
 
-.download-btn:hover {
+[is="download-btn"]:hover {
     background-color: hsla(300, 100%, 20%, 1);
 }
 
@@ -109,7 +109,7 @@ footer {
     box-shadow: none !important;
 }
 
-.download-btn span {
+[is="download-btn"] span {
     margin-left: 0.5em;
 }
 

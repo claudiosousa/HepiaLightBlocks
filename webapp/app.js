@@ -1,39 +1,15 @@
-import './components/blockly-designer/index.js';
 import './components/code-editor/Widget.js';
-import downloadFile from './tools/downloadFile.js';
+import './components/buttons/index.js';
 
-const blocklyDesigner = $('blockly-designer')[0];
-const pythonWidget = $('python-widget')[0];
-
-$('.download-btn').click(() =>
-    downloadFile('MAIN.PY', blocklyDesigner.getPythonCode())
-);
-
-const executeBtn = $('.execute-btn');
-executeBtn.click(async () => {
-    const code = blocklyDesigner.getPythonCode();
-    executeBtn.attr('disabled', 'disabled');
-    try {
-        await fetch('write', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            body: JSON.stringify({ code })
-        });
-    } catch (err) {}
-    executeBtn.removeAttr('disabled');
-});
+import BlocklyDesigner from './components/blockly-designer/index.js';
+import { downloadFile } from './components/tools/fileTools.js';
 
 const projectName = $('[name="project-name"]');
 const saveBtn = $('.save-btn');
 saveBtn.click(() => {
     projectName.val(projectName.val() || 'hepialight-untitled');
-    downloadFile(projectName.val() + '.xml', blocklyDesigner.getXml());
+    downloadFile(projectName.val() + '.xml', BlocklyDesigner.instance.getXml());
 });
-
-$('.zoom-in-btn').click(() => blocklyDesigner.zoomIn());
-$('.zoom-out-btn').click(() => blocklyDesigner.zoomOut());
 
 const hideDropArea = (timeout = 1000) =>
     (document.body.hideDropAreaTimeout = setTimeout(
@@ -75,7 +51,7 @@ $(document.body)
 
         const reader = new FileReader();
         reader.onload = e => {
-            blocklyDesigner.loadXml(e.target.result);
+            BlocklyDesigner.instance.loadXml(e.target.result);
             projectName.val(file.name.replace(/\.xml/, ''));
         };
         reader.readAsText(file);
@@ -85,5 +61,5 @@ $('.left-panel').resizable({
     handleSelector: '.splitter',
     resizeHeight: false,
     resizeWidthFrom: 'right',
-    onDragEnd: () => blocklyDesigner.resize()
+    onDragEnd: () => BlocklyDesigner.instance.resize()
 });

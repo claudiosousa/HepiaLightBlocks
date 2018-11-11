@@ -1,11 +1,7 @@
-import BlocklyDesigner from './../blockly-designer/index.js';
-import downloadFile from '../../tools/downloadFile.js';
+import BlocklyDesigner from '../blockly-designer/index.js';
+import { downloadFile } from '../tools/fileTools.js';
 
 class PythonWidget extends HTMLElement {
-    constructor() {
-        super();
-    }
-
     connectedCallback() {
         this.appendChild($('<pre class="prettyprint">')[0]);
         this.root = this.firstChild;

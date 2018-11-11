@@ -39,14 +39,7 @@
                         <i class="fa fa-save"></i>
                     </button>
                 </div>
-                <div class="btn-group zoom-area">
-                    <button class="btn btn-primary zoom-in-btn">
-                        <i class="fa fa-plus-circle"></i>
-                    </button>
-                    <button class="btn btn-primary zoom-out-btn">
-                        <i class="fa fa-minus-circle"></i>
-                    </button>
-                </div>
+                <zoom-buttons class="zoom-area"></zoom-buttons>
             </footer>
         </div>
 
@@ -56,12 +49,12 @@
             <python-widget></python-widget>
             <footer>
                 <div class="download-area">
-                    <button class="btn execute-btn" title="Envoyer sur la carte">
+                    <button is="execute-btn" class="btn" title="Envoyer sur la carte">
                         <i class="fa fa-play-circle icon-enabled"></i>
                         <i class="fa fa-circle-o-notch fa-spin icon-disabled"></i>
                         <span>Exécuter</span>
                     </button>
-                    <button class="btn download-btn" title="Télécharger">
+                    <button is="download-btn" class="btn" title="Télécharger">
                         <i class="fa fa-download"></i>
                     </button>
                 </div>
@@ -80,7 +73,6 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/jquery-resizable-dom/dist/jquery-resizable.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
-
     <script src="node_modules/code-prettify/src/prettify.js"></script>
     <script src="node_modules/blockly/blockly_compressed.js"></script>
     <script src="node_modules/blockly/blocks_compressed.js"></script>
@@ -88,7 +80,6 @@
     <script src="node_modules/blockly/python_compressed.js"></script>
     <script src="node_modules/blockly/javascript_compressed.js"></script>
     <script src="node_modules/lodash/lodash.min.js"></script>
-
 
     <script src="app.js" type="module"></script>
 </body>
