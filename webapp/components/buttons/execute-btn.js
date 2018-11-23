@@ -1,4 +1,4 @@
-import BlocklyDesigner from '../blockly-designer/index.js';
+import PythonWidget from '../code-editor/python-widget.js';
 
 class ExecuteBtn extends HTMLButtonElement {
     connectedCallback() {
@@ -6,7 +6,7 @@ class ExecuteBtn extends HTMLButtonElement {
     }
 
     async execute() {
-        const code = BlocklyDesigner.instance.getPythonCode();
+        const code = PythonWidget.instance.getCode();
         $(this).attr('disabled', 'disabled');
         try {
             await fetch('write', {

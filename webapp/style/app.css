@@ -174,21 +174,13 @@ blockly-designer>* {
 python-widget {
     flex-grow: 1;
     align-items: stretch;
-    display: flex;
-    flex-direction: column;
+    height: calc(100% - 5rem);
 }
 
-python-widget pre.prettyprint {
-    flex-grow: 1;
-    overflow: auto;
-    white-space: pre;
-    font-size: 1rem;
-    line-height: 1;
-    font-family: monospace !important;
+.CodeMirror {
+    border: 0 solid #eee;
     height: 100%;
-    border-radius: 0;
     width: 100%;
-    margin: 0;
 }
 
 body>img {

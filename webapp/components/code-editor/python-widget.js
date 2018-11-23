@@ -1,25 +1,28 @@
 import BlocklyDesigner from '../blockly-designer/index.js';
 import { downloadFile } from '../tools/file-tools.js';
-
 class PythonWidget extends HTMLElement {
     connectedCallback() {
-        this.appendChild($('<pre class="prettyprint">')[0]);
-        this.root = this.firstChild;
+        PythonWidget.instance = this;
+
+        this.codeWidget = CodeMirror(this, {
+            mode: 'python',
+            theme: 'midnight'
+        });
         BlocklyDesigner.instance.addChangeListener(code =>
             this.displayCode(code)
         );
     }
 
+    getCode() {
+        return this.codeWidget.getValue();
+    }
+
     displayCode() {
-        this.root.innerHTML = PR.prettyPrintOne(
-            BlocklyDesigner.instance.getPythonCode(),
-            'py',
-            true
-        );
+        this.codeWidget.setValue(BlocklyDesigner.instance.getPythonCode());
     }
 
     download() {
-        downloadFile('MAIN.PY', BlocklyDesigner.instance.getPythonCode());
+        downloadFile('MAIN.PY', this.getCode());
     }
 }
 

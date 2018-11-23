@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express'),
+    opn = require('opn'),
     app = express(),
     webport = 8765;
 
@@ -28,6 +29,5 @@ app.use(express.static('../webapp'));
 
 app.listen(webport, () => {
     console.log(`Example app listening on port ${webport}!`);
-    const opn = require('opn');
     opn(`http://localhost:${webport}`);
 }).setTimeout(30000);
