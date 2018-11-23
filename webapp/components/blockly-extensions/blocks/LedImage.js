@@ -21,7 +21,7 @@ const LedImage = {
         const image = block.getFieldValue('image');
         let image_str = '"""';
         for (let i = 0; i < 10; i++) {
-            image_str += '\n    ';
+            image_str += '\n   ';
             for (let j = 0; j < 10; j++) image_str += image[i * 10 + j];
         }
         image_str += '\n"""';

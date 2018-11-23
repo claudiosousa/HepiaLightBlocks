@@ -35,11 +35,6 @@ class HepiaBoard {
         process.stdout.write(data.toString('utf8'));
     }
 
-    getIndentation(line) {
-        for (let i = 0; i < line.length; i++) if (line[i] != ' ') return i;
-        return 0;
-    }
-
     splitCodeIntoCommands(code) {
         let commands = [
             EOL,
@@ -49,22 +44,32 @@ class HepiaBoard {
             '# NEW PROGRAM',
             EOL
         ];
-        let lastIdentation = 0;
+
+        const getIndentation = line => {
+            for (let i = 0; i < line.length; i++)
+                if (line[i] != ' ') return i % 2 ? -1 : i;
+            return 0;
+        };
+
+        let lastIndentation = 0;
+        const checkReturnToIndentation0 = line => {
+            let indentation = getIndentation(line);
+            if (indentation < 0) return;
+
+            if (indentation == 0 && lastIndentation > 0) commands.push(EOL);
+
+            lastIndentation = indentation;
+        };
+
         for (let line of code.split('\n')) {
             if (!line || line == '\r') break;
-            let indentation = this.getIndentation(line);
-            while (indentation < lastIdentation) {
-                commands.push(EOL);
-                lastIdentation -= INDENTATION;
-            }
-            lastIdentation = indentation;
+            checkReturnToIndentation0(line);
+
             commands.push(line);
             commands.push(EOL);
         }
-        while (lastIdentation > 0) {
-            commands.push(EOL);
-            lastIdentation -= INDENTATION;
-        }
+        checkReturnToIndentation0('');
+
         commands.push(EOL);
 
         return commands;
