@@ -207,3 +207,21 @@ def touche_haut_gauche():
 
 def touche_haut_droite():
     return touch.read(3)
+
+def round(x):
+    return int(x+0.5)
+
+def ceil(x):
+    return x if int(x) == x else int(x+1)
+
+def floor(x):
+    return int(x+0.5)
+
+def abs(x):
+    return x if x>=0 else -x
+
+def max(x, y):
+    return x if x>y else y
+
+def min(x, y):
+    return x if x<y else y
