@@ -4,6 +4,7 @@ const PourToujours = {
     init: function() {
         this.appendDummyInput().appendField('Pour toujours');
         this.appendStatementInput('instructions').setCheck(null);
+        this.setPreviousStatement(true, null);
         this.setColour(TOOLBOX_COLORS.LOOPS);
     },
     python: block => {
