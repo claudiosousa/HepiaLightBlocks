@@ -62,7 +62,7 @@ class HepiaBoard {
         };
 
         for (let line of code.split('\n')) {
-            if (!line || line == '\r') break;
+            if (!line || line == '\r') continue;
             checkReturnToIndentation0(line);
 
             commands.push(line);
