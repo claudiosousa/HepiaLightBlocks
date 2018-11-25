@@ -159,6 +159,11 @@ const toolboxConfig = [
             'MathRound',
             'math_modulo'
         ]
+    },
+    {
+        name: 'Fonctions',
+        custom: 'PROCEDURE',
+        color: '%{BKY_PROCEDURES_HUE}'
     }
 ];
 

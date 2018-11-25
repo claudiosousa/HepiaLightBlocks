@@ -43,3 +43,8 @@
     /*fa-calculator*/
     content: "\f1ec";
 }
+
+.tree-node-icon-Fonctions:before {
+    /*fa-code*/
+    content: "\f121";
+}
