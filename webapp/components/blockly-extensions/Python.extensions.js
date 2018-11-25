@@ -2,8 +2,9 @@ const finishFn = Blockly.Python.finish;
 
 Blockly.Python.finish = code => {
     if (Blockly.Python.definitions_) {
-        delete Blockly.Python.definitions_['from_numbers_import_Number'];
-        delete Blockly.Python.definitions_['variables'];
+        delete Blockly.Python.definitions_.import_math;
+        delete Blockly.Python.definitions_.from_numbers_import_Number;
+        delete Blockly.Python.definitions_.variables;
     }
 
     return finishFn(code);

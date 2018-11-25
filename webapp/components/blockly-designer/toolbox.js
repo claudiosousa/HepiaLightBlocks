@@ -55,7 +55,7 @@ const toolboxConfig = [
     {
         name: 'Événements',
         color: TOOLBOX_COLORS.INPUT,
-        blocks: ['BouttonPresse', 'Penche']
+        blocks: ['BouttonPresse', 'Penche', 'Accel']
     },
     {
         name: 'Logique',
@@ -151,10 +151,11 @@ const toolboxConfig = [
             },
             'math_arithmetic',
             'math_single',
-            'math_trig',
-            'math_constant',
+            'MathMax',
+            'MathMinMax',
+            'MathConstants',
             'math_number_property',
-            'math_round',
+            'MathRound',
             'math_modulo'
         ]
     }
