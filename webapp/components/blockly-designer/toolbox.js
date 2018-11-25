@@ -150,11 +150,12 @@ const toolboxConfig = [
                 }
             },
             'math_arithmetic',
-            'math_single',
+            'MathSingle',
             'MathMax',
+            //'math_trig',
             'MathMinMax',
             'MathConstants',
-            'math_number_property',
+            'MathNumeroProprietes',
             'MathRound',
             'math_modulo'
         ]

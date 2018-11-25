@@ -6,8 +6,8 @@ const MathMax = {
             new Blockly.FieldDropdown([['Maximum', 'max'], ['Minimum', 'min']]),
             'function'
         );
-        this.appendValueInput('value').setCheck('nb1');
-        this.appendValueInput('value').setCheck('nb2');
+        this.appendValueInput('nb1').setCheck('Number');
+        this.appendValueInput('nb2').setCheck('Number');
 
         this.setInputsInline(true);
         this.setOutput(true, 'Number');
