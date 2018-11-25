@@ -10,8 +10,8 @@ const BouttonPresse = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/BouttonPresse/images/board_button1.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'haut_gauche'
                     ],
@@ -19,8 +19,8 @@ const BouttonPresse = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/BouttonPresse/images/board_button2.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'haut_droite'
                     ],
@@ -28,8 +28,8 @@ const BouttonPresse = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/BouttonPresse/images/board_button3.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'bas_gauche'
                     ],
@@ -37,8 +37,8 @@ const BouttonPresse = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/BouttonPresse/images/board_button4.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'bas_droite'
                     ]

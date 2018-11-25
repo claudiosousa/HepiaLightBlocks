@@ -10,8 +10,8 @@ const Penche = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/Penche/images/board_top.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'avant'
                     ],
@@ -19,8 +19,8 @@ const Penche = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/Penche/images/board_right.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'droite'
                     ],
@@ -28,8 +28,8 @@ const Penche = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/Penche/images/board_bottom.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'arriere'
                     ],
@@ -37,8 +37,8 @@ const Penche = {
                         {
                             src:
                                 'components/blockly-extensions/blocks/Penche/images/board_left.png',
-                            width: 15,
-                            height: 15
+                            width: 20,
+                            height: 20
                         },
                         'gauche'
                     ]
