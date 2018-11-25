@@ -18,23 +18,23 @@ _seuil_accel = 0.3
 def delai(delai_en_sec):
     time.sleep(delai_en_sec)
 
-def colorToInt(hexColor):
+def _colorToInt(hexColor):
     return int(hexColor[1:], 16)
 
 
-COLORS = {
-    "R": colorToInt("#A2142F"),
-    "B": colorToInt("#0072BD"),
-    "O": colorToInt("#D95319"),
-    "Y": colorToInt("#EDB120"),
-    "P": colorToInt("#7E2F8E"),
-    "G": colorToInt("#77AC30"),
-    "C": colorToInt("#4DBEEE"),
-    ".": colorToInt("#000000")
+_COLORS = {
+    "R": _colorToInt("#A2142F"),
+    "B": _colorToInt("#0072BD"),
+    "O": _colorToInt("#D95319"),
+    "Y": _colorToInt("#EDB120"),
+    "P": _colorToInt("#7E2F8E"),
+    "G": _colorToInt("#77AC30"),
+    "C": _colorToInt("#4DBEEE"),
+    ".": _colorToInt("#000000")
 }
 
 # use https://goo.gl/gGYfJV to add new chars
-textDict = {
+_TEXT_DICT = {
     ' ': [],
     'A': [14, 17, 17, 31, 17, 17, 17],
     'B': [15, 17, 17, 31, 17, 17, 15],
@@ -136,10 +136,10 @@ def afficher_texte(text, color=ROUGE, speed=0.1):
             i -= h_offset
             char = text[i // (width + spacewidth)]
             col = i % (width + spacewidth)
-            if char not in textDict:
+            if char not in _TEXT_DICT:
                 char = ' '
         colbit = 1 << col
-        charMap = textDict[char]
+        charMap = _TEXT_DICT[char]
         for line in range(height):
             colored = len(charMap)>line and charMap[line] & colbit
             screen.set_led((xpos, height - 1 - line), color if colored else 0)
@@ -150,7 +150,7 @@ def afficher_texte(text, color=ROUGE, speed=0.1):
         delai(speed)
 
 def afficher_grille(grille):
-    arr = [COLORS[c] for c in grille if c in COLORS]
+    arr = [_COLORS[c] for c in grille if c in _COLORS]
     for i in range(NBR_LIGNES):
         for j in range(NBR_COLONNES):
             screen.set_led((j, NBR_LIGNES-1-i), arr[i * NBR_COLONNES + j])
@@ -180,6 +180,12 @@ def eteindre_led(pos_x, pos_y):
 
 def penche_gauche():
     return _accel.get_axis()[0] > _seuil_accel
+
+def accel_vertical():
+    return _accel.get_axis()[1]
+
+def accel_horizontal():
+    return _accel.get_axis()[0]
 
 def penche_droite():
     return _accel.get_axis()[0] < -_seuil_accel
