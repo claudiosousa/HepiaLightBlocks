@@ -14,4 +14,4 @@ Flash each card with the appropriate _MAIN.PY_ files that are available in this 
 
 See connection scheme in the next page
 
-![asdfasfd](physical_schema.png)
+![Physical schema](physical_schema.png)
