@@ -4,7 +4,7 @@ const EnvoyerMsg = {
     init: function() {
         this.appendDummyInput()
             .appendField('Envoyer')
-            .appendField(new Blockly.FieldNumber(1), 'msg')
+            .appendField(new Blockly.FieldNumber(1, 1), 'msg')
             .appendField('en direction')
             .appendField(
                 new Blockly.FieldDropdown([

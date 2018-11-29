@@ -103,26 +103,26 @@ _TEXT_DICT = {
     '7': [31, 16, 8, 4, 2, 2, 2],
     '8': [14, 17, 17, 14, 17, 17, 14],
     '9': [14, 17, 17, 30, 16, 8, 6],
-    '.':[0, 0, 0, 0, 0, 4, 4],
-    ',':[0, 0, 0, 0, 0, 4, 4, 2],
-    ';':[0, 0, 4, 4, 0, 4, 4, 2],
-    '?':[14, 17, 16, 12, 0, 4, 4],
-    '!':[4, 4, 4, 4, 0, 4, 4],
-    '-':[0, 0, 0, 0, 14],
-    '_':[0, 0, 0, 0, 0, 0, 31],
-    '*':[0, 0, 10, 4, 10],
-    '+':[0, 0, 4, 4, 31, 4, 4],
-    '/':[16, 16, 8, 4, 4, 2, 2],
-    '\\':[2, 2, 4, 8, 8, 16, 16],
-    '<':[0, 0, 8, 4, 2, 4, 8],
-    '>':[0, 0, 2, 4, 8, 4, 2],
-    '#':[10, 10, 31, 10, 31, 10, 10],
-    '=':[0, 0, 0, 31, 0, 31],
-    "'":[8, 8, 4],
-    "%":[11, 11, 4, 2, 2, 13, 13, 0, 0],
-    "&":[6, 1, 1, 6, 5, 9, 22, 0, 0],
-    "@":[14, 17, 29, 27, 31, 1, 30, 0, 0],
-    "$":[4, 30, 5, 14, 20, 15, 4, 0, 0],
+    '.': [0, 0, 0, 0, 0, 4, 4],
+    ',': [0, 0, 0, 0, 0, 4, 4, 2],
+    ';': [0, 0, 4, 4, 0, 4, 4, 2],
+    '?': [14, 17, 16, 12, 0, 4, 4],
+    '!': [4, 4, 4, 4, 0, 4, 4],
+    '-': [0, 0, 0, 0, 14],
+    '_': [0, 0, 0, 0, 0, 0, 31],
+    '*': [0, 0, 10, 4, 10],
+    '+': [0, 0, 4, 4, 31, 4, 4],
+    '/': [16, 16, 8, 4, 4, 2, 2],
+    '\\': [2, 2, 4, 8, 8, 16, 16],
+    '<': [0, 0, 8, 4, 2, 4, 8],
+    '>': [0, 0, 2, 4, 8, 4, 2],
+    '#': [10, 10, 31, 10, 31, 10, 10],
+    '=': [0, 0, 0, 31, 0, 31],
+    "'": [8, 8, 4],
+    "%": [11, 11, 4, 2, 2, 13, 13, 0, 0],
+    "&": [6, 1, 1, 6, 5, 9, 22, 0, 0],
+    "@": [14, 17, 29, 27, 31, 1, 30, 0, 0],
+    "$": [4, 30, 5, 14, 20, 15, 4, 0, 0],
 }
 
 def afficher_texte(text, color=ROUGE, speed=0.1):
@@ -146,7 +146,7 @@ def afficher_texte(text, color=ROUGE, speed=0.1):
         colbit = 1 << col
         charMap = _TEXT_DICT[char]
         for line in range(height):
-            colored = len(charMap)>line and charMap[line] & colbit
+            colored = len(charMap) > line and charMap[line] & colbit
             screen.set_led((xpos, height - 1 - line), color if colored else 0)
 
     for step in range(h_offset + len(text) * (width + spacewidth) + 1):
@@ -158,7 +158,7 @@ def afficher_grille(grille):
     arr = [_COLORS[c] for c in grille if c in _COLORS]
     for i in range(NBR_LIGNES):
         for j in range(NBR_COLONNES):
-            screen.set_led((j, NBR_LIGNES-1-i), arr[i * NBR_COLONNES + j])
+            screen.set_led((j, NBR_LIGNES - 1 - i), arr[i * NBR_COLONNES + j])
 
 
 def allumer_tout(couleur):
@@ -214,25 +214,26 @@ def touche_haut_droite():
     return touch.read(3)
 
 def round(x):
-    return int(x+0.5)
+    return int(x + 0.5)
 
 def ceil(x):
-    return x if int(x) == x else int(x+1)
+    return x if int(x) == x else int(x + 1)
 
 def floor(x):
-    return int(x+0.5)
+    return int(x + 0.5)
 
 def abs(x):
-    return x if x>=0 else -x
+    return x if x >= 0 else -x
 
 def max(x, y):
-    return x if x>y else y
+    return x if x > y else y
 
 def min(x, y):
-    return x if x<y else y
+    return x if x < y else y
 
 def envoyer_msg(direction, data):
-    uart.send_to(direction, data)
+    uart.send_to(direction, str(data))
 
 def recevoir_msg(direction):
-    return uart.recv(direction)
+    res = uart.recv(direction)
+    return int(res) if res else None
