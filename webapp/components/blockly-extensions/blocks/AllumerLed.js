@@ -2,7 +2,7 @@ import { COLORS, TOOLBOX_COLORS } from '../Constants.js';
 
 const AllumerLed = {
     init: function() {
-        this.appendDummyInput().appendField('allumer LED');
+        this.appendDummyInput().appendField('Allumer');
         this.appendValueInput('y')
             .setCheck('Number')
             .appendField('ligne');

@@ -2,7 +2,7 @@ import { TOOLBOX_COLORS } from '../Constants.js';
 
 const EteindreLed = {
     init: function() {
-        this.appendDummyInput().appendField('eteindre LED');
+        this.appendDummyInput().appendField('Éteindre');
         this.appendValueInput('y')
             .setCheck('Number')
             .appendField('ligne');

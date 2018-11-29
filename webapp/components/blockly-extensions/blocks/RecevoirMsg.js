@@ -22,7 +22,7 @@ const RecevoirMsg = {
     },
     python: block => {
         const direction = block.getFieldValue('direction');
-        return `recevoir_msg(${direction})\n`;
+        return [`recevoir_msg(${direction})\n`, 1];
     }
 };
 
