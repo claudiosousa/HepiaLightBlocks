@@ -6,6 +6,7 @@ import './AllumerTout.js';
 import './AttendreS.js';
 import './AttendreMs.js';
 import './BouttonPresse/BoutonPresse.js';
+import './EnvoyerMsg.js';
 import './EteindreLed.js';
 import './EteindreTout.js';
 import './LedImage.js';
