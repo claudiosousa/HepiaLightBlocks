@@ -55,7 +55,13 @@ const toolboxConfig = [
     {
         name: 'Événements',
         color: TOOLBOX_COLORS.INPUT,
-        blocks: ['BouttonPresse', 'Penche', 'Accel', 'EnvoyerMsg']
+        blocks: [
+            'BouttonPresse',
+            'Penche',
+            'Accel',
+            'EnvoyerMsg',
+            'RecevoirMsg'
+        ]
     },
     {
         name: 'Logique',

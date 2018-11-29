@@ -1,11 +1,9 @@
 import { TOOLBOX_COLORS } from '../Constants.js';
 
-const EnvoyerMsg = {
+const RecevoirMsg = {
     init: function() {
         this.appendDummyInput()
-            .appendField('Envoyer')
-            .appendField(new Blockly.FieldNumber(1), 'msg')
-            .appendField('en direction')
+            .appendField('Recevoir de')
             .appendField(
                 new Blockly.FieldDropdown([
                     ['Nord', 'N'],
@@ -16,19 +14,17 @@ const EnvoyerMsg = {
                 'direction'
             );
 
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
         this.setColour(TOOLBOX_COLORS.INPUT);
+        this.setOutput(true, 'Number');
+
         this.setTooltip('');
         this.setHelpUrl('');
     },
     python: block => {
         const direction = block.getFieldValue('direction');
-        const msg = block.getFieldValue('msg');
-        return `envoyer_msg(${direction}, ${msg})\n`;
+        return `recevoir_msg(${direction})\n`;
     }
 };
 
-Blockly.Blocks.EnvoyerMsg = EnvoyerMsg;
-Blockly.Python.EnvoyerMsg = EnvoyerMsg.python;
+Blockly.Blocks.RecevoirMsg = RecevoirMsg;
+Blockly.Python.RecevoirMsg = RecevoirMsg.python;

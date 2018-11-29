@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import time
-from Hepialight import screen, touch, accel
+from Hepialight import screen, touch, accel, uart
 
 # Constantes
 NBR_LIGNES = 10
@@ -11,6 +11,11 @@ NBR_COLONNES = 10
 ROUGE = 0xFF0000
 VERT = 0x00FF00
 BLEU = 0x0000FF
+
+N = 0
+S = 1
+E = 2
+O = 3
 
 _accel = accel()
 _seuil_accel = 0.3
@@ -225,3 +230,9 @@ def max(x, y):
 
 def min(x, y):
     return x if x<y else y
+
+def envoyer_msg(direction, data):
+    uart.send_to(direction, data)
+
+def recevoir_msg(direction):
+    return uart.recv(direction)

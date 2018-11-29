@@ -14,3 +14,4 @@ import './Math/index.js';
 import './Penche/Penche.js';
 import './PourToujours.js';
 import './ScrollText.js';
+import './RecevoirMsg.js';
