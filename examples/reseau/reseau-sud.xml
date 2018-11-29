@@ -1,0 +1,50 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="6_201IUwZGzkJi=f{5?8">r</variable>
+  </variables>
+  <block type="PourToujours" id="=v1wu6W8A9Z/c0l1cY@=" x="68" y="158">
+    <statement name="instructions">
+      <block type="variables_set" id=":|WLf:v#2r9C(RY7${pc">
+        <field name="VAR" id="6_201IUwZGzkJi=f{5?8" variabletype="">r</field>
+        <value name="VALUE">
+          <block type="RecevoirMsg" id="fMmpH!4kI]$5n%qWyr./">
+            <field name="direction">N</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="j,l-HoBl`1QTqg~p*Qfi">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="#3K.Ox8jZZ,SwNg}=Ij(">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="Gl/g{yL%TuydE08?TQNd">
+                    <field name="VAR" id="6_201IUwZGzkJi=f{5?8" variabletype="">r</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="TE7%Y!X`A`xx5uup1!p(">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="AllumerTout" id="MkJdhXBK.%1JJD(L%}7?">
+                <field name="color">#3333ff</field>
+                <next>
+                  <block type="AttendreMs" id="7hbZvOKkE_uqu^o{-e@!">
+                    <field name="ms">100</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="EteindreTout" id="6BIzP-v?@p#YrAr-M2^l"></block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,91 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="PourToujours" id="=v1wu6W8A9Z/c0l1cY@=" x="68" y="158">
+    <statement name="instructions">
+      <block type="controls_if" id="+`@rD8$x2Ql_gvR]lPDg">
+        <value name="IF0">
+          <block type="procedures_callreturn" id="/2C7jPjH.W__G8*iO$VX">
+            <mutation name="presseSud"></mutation>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="XMWVROYvk^7K!W~tPkl.">
+            <mutation name="allumerSud"></mutation>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="@B/_|b0wJ%cNTPpySK{n">
+            <value name="IF0">
+              <block type="procedures_callreturn" id="4n8F-{~]yMkvPV#fcB_S">
+                <mutation name="presseNord"></mutation>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="procedures_callnoreturn" id="1HtDR6:01k6Nxb{.afp=">
+                <mutation name="allumerNord"></mutation>
+              </block>
+            </statement>
+            <next>
+              <block type="AttendreMs" id="DE3vD{bj|nGab4XF5}vo">
+                <field name="ms">100</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="qKJJLqW3(xh{#6e%1}+`" x="23" y="383">
+    <field name="NAME">presseSud</field>
+    <value name="RETURN">
+      <block type="logic_operation" id="]GhhU:/}y.4l|)cP]:7L">
+        <field name="OP">OR</field>
+        <value name="A">
+          <block type="BouttonPresse" id="/v7(/N7m2TmAC|s~rE~I">
+            <field name="button_position">bas_gauche</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="BouttonPresse" id="=P(1dsL+zP4I]OkhK+|$">
+            <field name="button_position">bas_droite</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="procedures_defnoreturn" id="A15k2:pAb{.9]hVV0,oT" x="23" y="518">
+    <field name="NAME">allumerSud</field>
+    <statement name="STACK">
+      <block type="EnvoyerMsg" id="jew3$N}D23i,,]rP]V/+">
+        <field name="msg">1</field>
+        <field name="direction">S</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="Q|}l-dE_RZn-I$04UMIr" x="338" y="518">
+    <field name="NAME">allumerNord</field>
+    <statement name="STACK">
+      <block type="EnvoyerMsg" id="u0?Vk-[13FBLFu#C0[,O">
+        <field name="msg">1</field>
+        <field name="direction">N</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defreturn" id="|`C|[ougEXM0d=ehGVgj" x="23" y="653">
+    <field name="NAME">presseNord</field>
+    <value name="RETURN">
+      <block type="logic_operation" id="~n^CC7Sb[*|Kt#i2M!$K">
+        <field name="OP">OR</field>
+        <value name="A">
+          <block type="BouttonPresse" id="S?]4sKt$D8b3Mf9#[;)*">
+            <field name="button_position">haut_gauche</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="BouttonPresse" id="b(Kq+tg/aT]r5JY%yNU6">
+            <field name="button_position">haut_droite</field>
+          </block>
+        </value>
+      </block>
+    </value>
+  </block>
+</xml>
