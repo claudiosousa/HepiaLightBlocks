@@ -13,27 +13,10 @@ class BoardIo extends HTMLElement {
     connectedCallback() {
         this.appendChild($('<pre></pre>')[0]);
         this.root = this.firstChild;
-        communicationService.on('open', () => this.onOpened());
-        communicationService.on('close', () => this.onClose());
-        communicationService.on('error', err => this.onError(err));
-        communicationService.on('data', data => this.onData(data));
-        this.onOpened();
-    }
-
-    onOpened() {
-        this.setAttribute('socket', 'open');
-    }
-
-    onClose() {
-        this.setAttribute('socket', 'closed');
-    }
-
-    onError(err) {
-        this.add(`ERROR: ${err}`);
-    }
-
-    onData(data) {
-        this.add(data);
+        communicationService.dataSource.onError(err =>
+            this.add(`ERROR: ${err}`)
+        );
+        communicationService.dataSource.onValue(data => this.add(data));
     }
 
     add(txt) {
