@@ -1,4 +1,5 @@
 import PythonWidget from '../code-editor/python-widget.js';
+import { communicationService } from '../../services/CommunicationService.js';
 
 class ExecuteBtn extends HTMLButtonElement {
     connectedCallback() {
@@ -8,16 +9,8 @@ class ExecuteBtn extends HTMLButtonElement {
     async execute() {
         const code = PythonWidget.instance.getCode();
         $(this).attr('disabled', 'disabled');
-        try {
-            await fetch('write', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json; charset=utf-8'
-                },
-                body: JSON.stringify({ code })
-            });
-        } catch (err) {}
-        $(this).removeAttr('disabled');
+        communicationService.send('RUN', code);
+        setTimeout(() => $(this).removeAttr('disabled'), 600);
     }
 }
 

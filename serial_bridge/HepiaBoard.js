@@ -1,14 +1,16 @@
+// @ts-check
+
 const SerialPort = require('serialport');
 const VENDOR_ID = '1f00';
 const PRODUCT_ID = '2012';
 const INSTRUCTION_INTERVAL = 50;
 const EOL = '\x0A\x0D';
 const BREAK = '\x03';
-const INDENTATION = 2;
 
 class HepiaBoard {
-    constructor() {
-        this.errorRaised = false;
+    constructor(dataCb, errorCb) {
+        this.dataCb = dataCb;
+        this.errorCb = errorCb;
     }
 
     async findHepiaLightCom() {
@@ -23,25 +25,32 @@ class HepiaBoard {
         if (!comPort) throw 'No hepia light card found';
         this.port = new SerialPort(comPort.comName);
         this.port.on('error', err => this.onError(err));
+        this.port.on('close', () => this.onClose());
         this.port.on('data', data => this.onData(data));
+    }
+
+    onClose() {
+        if (!this.destroying) this.onError(new Error('Card disconnected!'));
     }
 
     onError(err) {
         this.errorRaised = true;
-        console.log('Error: ', err.message);
+        console.log('Serial Error: ', err.message);
+        this.errorCb(err.message);
     }
 
     onData(data) {
-        process.stdout.write(data.toString('utf8'));
+        //process.stdout.write(data.toString('utf8'));
+        this.dataCb(data.toString('utf8'));
     }
 
     splitCodeIntoCommands(code) {
         let commands = [
             EOL,
             BREAK,
-            'eteindre_tout()',
+            '### NEW PROGRAM ###',
             EOL,
-            '# NEW PROGRAM',
+            'eteindre_tout()',
             EOL
         ];
 
@@ -76,6 +85,7 @@ class HepiaBoard {
     }
 
     async destroy() {
+        this.destroying = true;
         return new Promise(resolve => {
             try {
                 this.port.close(() => {

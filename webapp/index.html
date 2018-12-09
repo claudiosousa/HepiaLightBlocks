@@ -28,7 +28,7 @@
 
     <main>
 
-        <div class="left-panel">
+        <div class="designer-panel">
 
             <blockly-designer></blockly-designer>
 
@@ -41,10 +41,12 @@
             </footer>
         </div>
 
-        <div class="splitter"></div>
+        <div class="designer-splitter"></div>
 
         <div class="right-panel">
             <python-widget></python-widget>
+            <div class="python-splitter"></div>
+            <board-io></board-io>
             <footer>
                 <div class="download-area">
                     <button is="execute-btn" class="btn" title="Envoyer sur la carte">

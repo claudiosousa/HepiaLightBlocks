@@ -1,33 +1,32 @@
+// @ts-check
 'use strict';
 
-const express = require('express'),
-    opn = require('opn'),
-    app = express(),
-    webport = 8765;
+const Express = require('express'),
+    ExpressWs = require('express-ws'),
+    HepiaBoardManager = require('./HepiaBoardManager.js'),
+    opn = require('opn');
 
-const HepiaBoard = require('./HepiaBoard.js');
+const WEBPORT = 8765,
+    aWss = ExpressWs(Express()),
+    app = aWss.app,
+    hepiaBoardManager = new HepiaBoardManager(aWss.getWss('/'));
 
-app.use(express.json());
+app.use(Express.json());
 
-let board = null;
-app.post('/write', async (req, res) => {
-    if (board) return res.status(503).send('Busy');
-
-    try {
-        board = new HepiaBoard();
-        await board.connect();
-        await board.execute(req.body.code);
-        await board.destroy();
-    } catch (err) {
-        console.log(`Cannot write to board: ${err}`);
-    }
-    board = null;
-    res.send();
+app.ws('/ws', (ws, req) => {
+    ws.on('message', msg => {
+        try {
+            const cmd = JSON.parse(msg);
+            if (cmd.type == 'RUN') hepiaBoardManager.write(cmd.data);
+        } catch (e) {
+            console.error(`ERROR: ${e}`);
+        }
+    });
 });
 
-app.use(express.static('../webapp'));
+app.use(Express.static('../webapp'));
 
-app.listen(webport, () => {
-    console.log(`Example app listening on port ${webport}!`);
-    opn(`http://localhost:${webport}`);
-}).setTimeout(30000);
+app.listen(WEBPORT, () => {
+    console.log(`Example app listening on port ${WEBPORT}!`);
+    opn(`http://localhost:${WEBPORT}`);
+});
