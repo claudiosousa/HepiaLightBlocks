@@ -14,7 +14,7 @@ class BoardIo extends HTMLElement {
         this.appendChild($('<pre></pre>')[0]);
         this.root = this.firstChild;
         communicationService.dataSource.onError(err =>
-            this.add(`ERROR: ${err}`)
+            this.add(`ERROR: ${err}\n`)
         );
         communicationService.dataSource.onValue(data => this.add(data));
     }
