@@ -55,13 +55,7 @@ const toolboxConfig = [
     {
         name: 'Événements',
         color: TOOLBOX_COLORS.INPUT,
-        blocks: [
-            'BouttonPresse',
-            'Penche',
-            'Accel',
-            'EnvoyerMsg',
-            'RecevoirMsg'
-        ]
+        blocks: ['BouttonPresse', 'Penche', 'Accel']
     },
     {
         name: 'Logique',
@@ -170,6 +164,47 @@ const toolboxConfig = [
         name: 'Fonctions',
         custom: 'PROCEDURE',
         color: '%{BKY_PROCEDURES_HUE}'
+    },
+    {
+        name: 'Communication',
+        color: TOOLBOX_COLORS.COMMUNICATION,
+        blocks: [
+            {
+                type: 'EnvoyerMsg',
+                value: [
+                    {
+                        name: 'direction',
+                        block: {
+                            type: 'Direction',
+                            field: {
+                                name: 'direction',
+                                text: 'N'
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                type: 'RecevoirMsg',
+                value: [
+                    {
+                        name: 'direction',
+                        block: {
+                            type: 'Direction',
+                            field: {
+                                name: 'direction',
+                                text: 'N'
+                            }
+                        }
+                    }
+                ]
+            },
+            /*'Direction',*/
+            'Nord',
+            'Ouest',
+            'Sud',
+            'Est'
+        ]
     }
 ];
 

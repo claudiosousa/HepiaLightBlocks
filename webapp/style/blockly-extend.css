@@ -48,3 +48,8 @@
     /*fa-code*/
     content: "\f121";
 }
+
+.tree-node-icon-Communication:before {
+    /*fa-plug*/
+    content: "\f1e6";
+}
