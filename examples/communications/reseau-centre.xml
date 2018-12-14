@@ -36,6 +36,7 @@
   </block>
   <block type="procedures_defreturn" id="qKJJLqW3(xh{#6e%1}+`" x="23" y="383">
     <field name="NAME">presseSud</field>
+    <comment pinned="false" h="80" w="160">Décrire cette fonction…</comment>
     <value name="RETURN">
       <block type="logic_operation" id="]GhhU:/}y.4l|)cP]:7L">
         <field name="OP">OR</field>
@@ -54,24 +55,31 @@
   </block>
   <block type="procedures_defnoreturn" id="A15k2:pAb{.9]hVV0,oT" x="23" y="518">
     <field name="NAME">allumerSud</field>
+    <comment pinned="false" h="80" w="160">Décrire cette fonction…</comment>
     <statement name="STACK">
       <block type="EnvoyerMsg" id="jew3$N}D23i,,]rP]V/+">
         <field name="msg">1</field>
-        <field name="direction">S</field>
+        <value name="direction">
+          <block type="Sud" id="q05Y[Ym+,)zTF1]O!*}a"></block>
+        </value>
       </block>
     </statement>
   </block>
   <block type="procedures_defnoreturn" id="Q|}l-dE_RZn-I$04UMIr" x="338" y="518">
     <field name="NAME">allumerNord</field>
+    <comment pinned="false" h="80" w="160">Décrire cette fonction…</comment>
     <statement name="STACK">
       <block type="EnvoyerMsg" id="u0?Vk-[13FBLFu#C0[,O">
         <field name="msg">1</field>
-        <field name="direction">N</field>
+        <value name="direction">
+          <block type="Nord" id="2C$g9/P^/=)7iPFuL)AY"></block>
+        </value>
       </block>
     </statement>
   </block>
   <block type="procedures_defreturn" id="|`C|[ougEXM0d=ehGVgj" x="23" y="653">
     <field name="NAME">presseNord</field>
+    <comment pinned="false" h="80" w="160">Décrire cette fonction…</comment>
     <value name="RETURN">
       <block type="logic_operation" id="~n^CC7Sb[*|Kt#i2M!$K">
         <field name="OP">OR</field>

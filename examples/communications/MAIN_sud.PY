@@ -1,5 +1,5 @@
 while True:
-  r = recevoir_msg(N)
+  r = recevoir_msg((N))
 
   if r == 1:
     allumer_tout(3355647)

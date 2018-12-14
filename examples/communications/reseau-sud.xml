@@ -8,7 +8,9 @@
         <field name="VAR" id="6_201IUwZGzkJi=f{5?8" variabletype="">r</field>
         <value name="VALUE">
           <block type="RecevoirMsg" id="fMmpH!4kI]$5n%qWyr./">
-            <field name="direction">S</field>
+            <value name="direction">
+              <block type="Nord" id="q(}Fx3h6koDBWM^Pyw.%"></block>
+            </value>
           </block>
         </value>
         <next>
@@ -31,7 +33,7 @@
             </value>
             <statement name="DO0">
               <block type="AllumerTout" id="MkJdhXBK.%1JJD(L%}7?">
-                <field name="color">#cc0000</field>
+                <field name="color">#3333ff</field>
                 <next>
                   <block type="AttendreMs" id="7hbZvOKkE_uqu^o{-e@!">
                     <field name="ms">100</field>
