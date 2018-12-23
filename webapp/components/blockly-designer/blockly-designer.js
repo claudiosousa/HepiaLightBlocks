@@ -33,10 +33,6 @@ class BlocklyDesigner extends HTMLElement {
         return Blockly.Python.workspaceToCode(this.blockly);
     }
 
-    getJSCode() {
-        return Blockly.JavaScript.workspaceToCode(this.blockly);
-    }
-
     getXml() {
         const xml = Blockly.Xml.workspaceToDom(this.blockly);
         return Blockly.Xml.domToPrettyText(xml);

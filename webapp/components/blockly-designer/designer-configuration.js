@@ -1,7 +1,7 @@
 import toolbox from './toolbox.js';
 
 const designerConfiguration = {
-    media: '../node_modules/blockly/media/',
+    media: '../lib/blockly/media/',
     toolbox,
     zoom: {
         controls: false,
