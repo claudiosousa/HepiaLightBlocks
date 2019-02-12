@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Hepia Light App Developer</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
@@ -21,9 +22,24 @@
             <img src="images/logo_hepia_negatif_red.png" alt="hepia">
         </a>
 
-        <a target="_blank" class="bug" href="https://github.com/claudiosousa/hepialight-blockly/issues/new">
-            Reporter un bug
-        </a>
+        <button type="button" class="btn btn-primary options dropdown-btn" data-toggle="dropdown" data-boundary="viewport">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">
+                <i class="fa fa-play-circle"></i>
+                <span>Tutorial</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" target="_blank" href="https://github.com/claudiosousa/hepialight-blockly/issues/new">
+                <i class="fa fa-bug"></i>
+                <span>Rapporter un bug</span>
+            </a>
+            <a class="dropdown-item" target="_blank" href="https://www.hepialsn.com">
+                <i class="fa fa-university"></i>
+                <span>LSN Hepia</span>
+            </a>
+         </div>
     </header>
 
     <main>
@@ -67,6 +83,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/jquery-resizable-dom/dist/jquery-resizable.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/kefir/dist/kefir.min.js"></script>
     <script src="node_modules/codemirror/lib/codemirror.js"></script>
     <script src="node_modules/codemirror/mode/python/python.js"></script>

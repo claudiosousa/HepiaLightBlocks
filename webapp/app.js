@@ -14,3 +14,5 @@ $('python-widget').resizable({
     resizeWidth: false,
     resizeHeightFrom: 'bottom'
 });
+
+$('.dropdown-btn').dropdown()

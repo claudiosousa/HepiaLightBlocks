@@ -21,8 +21,8 @@ header {
     justify-content: space-between;
 }
 
-header a.bug {
-    color: #333;
+header .options {
+    color: white;
     font-size: 1rem;
     padding: 0 1rem;
 }
@@ -66,6 +66,11 @@ footer {
     justify-content: space-around;
     padding: 0 1rem;
     align-items: center;
+}
+
+.btn:hover {
+    color: white;
+    text-decoration: none;
 }
 
 [is="download-btn"],
@@ -123,9 +128,9 @@ footer {
 
 zoom-buttons {
     padding: 0 6rem 0 2rem;
-    flex-grow: 1;
     align-items: center;
     justify-content: flex-end;
+    flex-grow: 0;
 }
 
 .save-btn {
