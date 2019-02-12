@@ -1,5 +1,6 @@
 import './components/index.js';
 import BlocklyDesigner from './components/blockly-designer/index.js';
+import TutorialService from './services/TutorialService.js';
 
 $('.designer-panel').resizable({
     handleSelector: '.designer-splitter',
@@ -15,4 +16,6 @@ $('python-widget').resizable({
     resizeHeightFrom: 'bottom'
 });
 
-$('.dropdown-btn').dropdown()
+$('.dropdown-btn').dropdown();
+
+window.tutorial = new TutorialService(BlocklyDesigner.instance);

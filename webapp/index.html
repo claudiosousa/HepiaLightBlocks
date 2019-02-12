@@ -12,26 +12,29 @@
     <link rel="stylesheet" href="style/app.css">
     <link rel="stylesheet" href="style/blockly-override.css">
     <link rel="stylesheet" href="style/blockly-extend.css">
+    <link rel="stylesheet" href="style/bootstrap-override.css">
     <link rel="stylesheet" href="components/blockly-extensions/fields/LegImageField.css">
+    <link rel="stylesheet" href="node_modules/code-prettify/src/prettify.css">
 </head>
 
 <body is="droppable-area">
-
     <header>
         <a target="_blank" href="https://www.hesge.ch/hepia/">
             <img src="images/logo_hepia_negatif_red.png" alt="hepia">
         </a>
 
-        <button type="button" class="btn btn-primary options dropdown-btn" data-toggle="dropdown" data-boundary="viewport">
+        <button type="button" class="btn btn-primary options dropdown-btn" data-toggle="dropdown"
+            data-boundary="viewport">
             <i class="fa fa-bars fa-2x"></i>
         </button>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="#" onclick="tutorial.displayTutorial()">
                 <i class="fa fa-play-circle"></i>
                 <span>Tutorial</span>
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" target="_blank" href="https://github.com/claudiosousa/hepialight-blockly/issues/new">
+            <a class="dropdown-item" target="_blank"
+                href="https://github.com/claudiosousa/hepialight-blockly/issues/new">
                 <i class="fa fa-bug"></i>
                 <span>Rapporter un bug</span>
             </a>
@@ -39,20 +42,15 @@
                 <i class="fa fa-university"></i>
                 <span>LSN Hepia</span>
             </a>
-         </div>
+        </div>
     </header>
 
     <main>
-
         <div class="designer-panel">
-
             <blockly-designer></blockly-designer>
-
             <footer>
                 <div style="flex:1 1 206px;"></div>
-
                 <project-name class="project-name-area"></project-name>
-
                 <zoom-buttons></zoom-buttons>
             </footer>
         </div>
@@ -81,9 +79,10 @@
     </main>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
     <script src="node_modules/jquery-resizable-dom/dist/jquery-resizable.min.js"></script>
     <script src="node_modules/lodash/lodash.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/kefir/dist/kefir.min.js"></script>
     <script src="node_modules/codemirror/lib/codemirror.js"></script>
     <script src="node_modules/codemirror/mode/python/python.js"></script>
@@ -93,8 +92,12 @@
     <script src="node_modules/blockly/python_compressed.js"></script>
     <script src="node_modules/blockly/javascript_compressed.js"></script>
     <script src="node_modules/lodash/lodash.min.js"></script>
-
+    <script src="node_modules/showdown/dist/showdown.min.js"></script>
+    <script src="node_modules/code-prettify/src/prettify.js"></script>
+    <script src="node_modules/showdown-prettify/dist/showdown-prettify.min.js"></script>
     <script src="app.js" type="module"></script>
+
+
 </body>
 
 </html>
