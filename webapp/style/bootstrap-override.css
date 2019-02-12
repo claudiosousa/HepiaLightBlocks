@@ -1,15 +1,54 @@
-.modal
-{
+.modal-open .modal {
     overflow: hidden;
+    width: auto;
+    max-height: 550px;
+    padding-left: 0;
+    left: calc(50% - 250px);
+    top: calc(50% - 275px);
 }
-.modal-dialog{
-    margin-right: 0;
-    margin-left: 0;
+
+.modal-dialog {
+    margin: 0;
+    height: 100%;
 }
-.modeless{
-    top:10%;
+
+.modal-content {
+    height: 100%;
+}
+
+.modal-header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #005dc1;
+    color: #fff;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.modal-header .close {
+    align-self: stretch;
+    padding: 0 1rem;
+    margin: -1rem -1rem -1rem auto;
+}
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.modal-progress {
+    position:absolute;
     left:50%;
-    bottom:auto;
-    right:auto;
-    margin-left:-300px;
+    transform: translateX(-50%);
+}
+
+.modal-body {
+    overflow-y: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.modal-footer {
+    flex-shrink: 0;
+    flex-grow: 0;
 }
