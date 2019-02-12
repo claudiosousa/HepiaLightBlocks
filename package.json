@@ -8,7 +8,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "prettify": "node_modules/prettier/bin-prettier.js  \"**/*.{js,json,scss}\" --write"
     },
-    "husky": {
+    "husky_": {
         "hooks": {
             "pre-commit": "lint-staged"
         }
