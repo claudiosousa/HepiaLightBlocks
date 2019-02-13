@@ -2,7 +2,7 @@ import './components/index.js';
 import BlocklyDesigner from './components/blockly-designer/index.js';
 import TutorialService from './services/TutorialService.js';
 
-$('.designer-panel').resizable({
+$R('.designer-panel').resizable({
     handleSelector: '.designer-splitter',
     resizeHeight: false,
     resizeWidthFrom: 'right',
@@ -10,7 +10,7 @@ $('.designer-panel').resizable({
     onDrag: () => BlocklyDesigner.instance.resize()
 });
 
-$('python-widget').resizable({
+$R('python-widget').resizable({
     handleSelector: '.python-splitter',
     resizeWidth: false,
     resizeHeightFrom: 'bottom'

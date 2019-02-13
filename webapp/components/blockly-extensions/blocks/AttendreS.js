@@ -3,7 +3,7 @@ import { TOOLBOX_COLORS } from '../Constants.js';
 const AttendreS = {
     init: function() {
         this.appendDummyInput()
-            .appendField('attendre')
+            .appendField('Attendre')
             .appendField(new Blockly.FieldNumber(1, 0, Infinity), 's')
             .appendField('s');
         this.setInputsInline(true);
