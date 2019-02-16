@@ -14,7 +14,7 @@
         }
     },
     "lint-staged": {
-        "*.{json,scss,md}": [
+        "*.{json,scss}": [
             "node_modules/prettier/bin-prettier.js --write",
             "git add"
         ],

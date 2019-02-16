@@ -4,7 +4,7 @@ Ce tutorial va te guider dans les étapes nécéssaires à la réalisation d'un 
 
 Avant de commencer, assure toi que tu as une carte HepiaLight:
 
-![](tutorial/images/board.png =100x\*)
+![](tutorial/images/board.png =100x*)
 
 Et que ton espace de travail est vide:
 
@@ -22,11 +22,11 @@ Et que ton espace de travail est vide:
 
 A gauche de l'espace se travail se trouvent tous les composants groupés par catégorie.
 
-Sous ![](tutorial/images/affichage.png =\*x25) se trouvent les composant liés au contrôle des élèments graphique de votre carte.
+Sous ![](tutorial/images/affichage.png =*x25) se trouvent les composant liés au contrôle des élèments graphique de votre carte.
 
 Glisser-déposer le composant _Allumer LED_ dans l'espace de travail:
 
-![](tutorial/images/drag_component.gif =480x\*)
+![](tutorial/images/drag_component.gif =480x*)
 
 <button onclick="tutorial.workspace('allumer_led_default')">Charger la solution</button>
 
@@ -54,7 +54,7 @@ Ecrire la valeur `4` sur la ligne et colonne du composant "Allumer LED" dans l'e
 
 Choisir la couleur de votre choix en cliquant sur le carré rouge.
 
-![](tutorial/images/allumer_led_configured.png =\*x25)
+![](tutorial/images/allumer_led_configured.png =*x25)
 
 <button onclick="tutorial.workspace('led4_4_blue')">Charger la solution</button>
 
@@ -80,7 +80,7 @@ Choisir la couleur de votre choix en cliquant sur le carré rouge.
 
 Configuré ainsi, ce composant allume une leds sur la carte comme illustré:
 
-![](tutorial/images/board_blue_led.png =200x\*)
+![](tutorial/images/board_blue_led.png =200x*)
 
 Branchez votre HepiaLight et cliquez sur le boutton "Exécuter" pour executer le programme sur votre carte.
 
@@ -95,7 +95,7 @@ Pour cela, nous devons rajouter le composants:
 
 Les composant doivent être placés les uns après les autres:
 
-![](tutorial/images/allumer_led_eteindre.png =400x\*)
+![](tutorial/images/allumer_led_eteindre.png =400x*)
 
 <button onclick="tutorial.workspace('eteindre')">Charger la solution</button>
 
@@ -125,22 +125,18 @@ Les composant doivent être placés les uns après les autres:
 </xml>
 </workspace>
 
-# Clignoter
-
-Nous avons réussit à faire allumer une LED qui s'éteint au bout de 0.5s. Bravo !
+# Faire clignoter la led
 
 Nous aimerions maintenant faire clignoter la LED.
-En d'autres mots, nous aimerions que la LED se rallume 0.5s plus tard, et qu'elle re-effecue toutes ces étapes de manière répétée.
+En d'autres mots, nous aimerions attendre 0.5s et puis re-effectuer toutes ces étapes de manière répétée.
 
-Pour ce faire, dupliquez le composant _Attente_ déjà placé en le sélectionant, suivi d'un copier-coller (_ctrl+c_ et _ctrl+v_).
+Placez une copie du composant _Attente_ après les autres déjà placés, et le tous dans le composant _Pour toujours_, qui se trouve dans la section _Boucles_.
 
-Assurez vous de bien placer ce composant après les autres déjà placés.
+Ce composant doit être placé soigneusement de manière à contenir à son intérieur tous ceux placés précédément.
 
-Il ne nous reste plus faire en sorte que le tout se répète, à l'aide du composant _Pour toujours_, qui se trouve dans la section _Boucles_.
+Voici l'état final:
 
-Ce composant doit être placé soigneusement de manière à contenir à son intérieur tous ceux placés précédément:
-
-![](tutorial/images/workspace_final.png =400x\*)
+![](tutorial/images/workspace_final.png =400x*)
 
 <button onclick="tutorial.workspace('workspace_final')">Charger la solution</button>
 
@@ -186,4 +182,4 @@ Executez la version final du programme sur votre HepiaLight à l'aide du boutton
 
 Votre carte doit maintenant affiché une LED qui clignote comme illustré ici:
 
-![](tutorial/images/final_animated.gif =200x\*)
+![](tutorial/images/final_animated.gif =200x*)
