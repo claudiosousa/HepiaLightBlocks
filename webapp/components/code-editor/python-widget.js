@@ -8,9 +8,19 @@ class PythonWidget extends HTMLElement {
             mode: 'python',
             theme: 'midnight'
         });
-        BlocklyDesigner.instance.addChangeListener(code =>
-            this.displayCode(code)
-        );
+        $('#python-override-modal').on('show.bs.modal', event => {
+            debugger;
+            this.displayCode(code);
+        });
+
+        BlocklyDesigner.instance.addChangeListener(code => {
+            if (this.isClean()) {
+                this.displayCode(code);
+            } else {
+                $('#python-override-modal').modal('show');
+            }
+        });
+        this.codeWidget.markClean();
     }
 
     getCode() {
@@ -19,6 +29,11 @@ class PythonWidget extends HTMLElement {
 
     displayCode() {
         this.codeWidget.setValue(BlocklyDesigner.instance.getPythonCode());
+        this.codeWidget.markClean();
+    }
+
+    isClean() {
+        return this.codeWidget.isClean();
     }
 
     download() {

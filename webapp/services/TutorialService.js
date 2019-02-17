@@ -11,7 +11,7 @@ export default class TutorialService {
 
     buildModalHtml(content) {
         return `
-        <div class="modal fade" role="dialog">
+        <div class="modal fade tutorial-modal" role="dialog">
             <style></style>
             <div class="modal-dialog">
                 <div class="modal-content">

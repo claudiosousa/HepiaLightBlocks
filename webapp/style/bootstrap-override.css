@@ -1,4 +1,4 @@
-.modal-open .modal {
+.modal-open .tutorial-modal {
     overflow: hidden;
     width: auto;
     max-height: 550px;
@@ -7,16 +7,16 @@
     top: calc(50% - 275px);
 }
 
-.modal-dialog {
+.tutorial-modal .modal-dialog {
     margin: 0;
     height: 100%;
 }
 
-.modal-content {
+.tutorial-modal .modal-content {
     height: 100%;
 }
 
-.modal-header {
+.tutorial-modal .modal-header {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     background-color: #005dc1;
@@ -25,30 +25,30 @@
     flex-grow: 0;
 }
 
-.modal-header .close {
+.tutorial-modal .modal-header .close {
     align-self: stretch;
     padding: 0 1rem;
     margin: -1rem -1rem -1rem auto;
 }
 
-.modal-title {
+.tutorial-modal .modal-title {
     margin-bottom: 0;
     line-height: 1.5;
 }
 
-.modal-progress {
+.tutorial-modal .modal-progress {
     position:absolute;
     left:50%;
     transform: translateX(-50%);
 }
 
-.modal-body {
+.tutorial-modal .modal-body {
     overflow-y: auto;
     flex-shrink: 1;
     flex-grow: 1;
 }
 
-.modal-footer {
+.tutorial-modal .modal-footer {
     flex-shrink: 0;
     flex-grow: 0;
 }
