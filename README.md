@@ -1,7 +1,7 @@
 # HepiaLightBlocks
 
-Web app offering a block based language to program the [HEPIA](http://hepia.hesge.ch)
-education board [HepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).
+Web based blockly environment for [HEPIA](http://hepia.hesge.ch)'s
+educational board [HepiaLight](http://hepia.hesge.ch/fr/groupes-de-competences/hepialight/accueil/).
 
 ## Installation
 
