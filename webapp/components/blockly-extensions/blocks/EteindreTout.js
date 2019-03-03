@@ -2,7 +2,7 @@ import { TOOLBOX_COLORS } from '../Constants.js';
 
 const EteindreTout = {
     init: function() {
-        this.appendDummyInput().appendField('Eteindre Tout');
+        this.appendDummyInput().appendField('Éteindre tout');
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

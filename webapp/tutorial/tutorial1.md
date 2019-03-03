@@ -1,6 +1,6 @@
-# Tutorial blink
+# Tutoriel blink
 
-Ce tutorial va te guider dans les étapes nécéssaires à la réalisation d'un simple programme _Blink_ avec ton HepiaLight.
+Ce tutoriel va te guider dans les étapes nécessaires à la réalisation d'un simple programme _Blink_ avec ton HepiaLight.
 
 Avant de commencer, assure toi que tu as une carte HepiaLight:
 
@@ -20,11 +20,11 @@ Et que ton espace de travail est vide:
 
 # Ajouter un composant
 
-A gauche de l'espace se travail se trouvent tous les composants groupés par catégorie.
+À gauche de l'espace de travail se trouvent tous les composants groupés par catégorie.
 
-Sous ![](tutorial/images/affichage.png =*x25) se trouvent les composant liés au contrôle des élèments graphique de votre carte.
+Sous ![](tutorial/images/affichage.png =*x25) se trouvent les composant liés au contrôle des éléments graphique de votre carte.
 
-Glisser-déposer le composant _Allumer LED_ dans l'espace de travail:
+Glisser-déposer le composant _Allumer LED_ dans l'espace de travail :
 
 ![](tutorial/images/drag_component.gif =480x*)
 
@@ -50,9 +50,9 @@ Glisser-déposer le composant _Allumer LED_ dans l'espace de travail:
 
 # Configurer le composant
 
-Ecrire la valeur `4` sur la ligne et colonne du composant "Allumer LED" dans l'espace de travail.
+Écrire la valeur `4` sur la ligne et colonne du composant "Allumer LED" dans l'espace de travail.
 
-Choisir la couleur de votre choix en cliquant sur le carré rouge.
+Choisir la couleur de votre choix en cliquant sur le carré coloré à droite.
 
 ![](tutorial/images/allumer_led_configured.png =*x25)
 
@@ -76,24 +76,24 @@ Choisir la couleur de votre choix en cliquant sur le carré rouge.
 </xml>
 </workspace>
 
-# Tester
+# Testez
 
-Configuré ainsi, ce composant allume une leds sur la carte comme illustré:
+Configuré ainsi, ce composant allume une LED sur la carte comme illustré :
 
 ![](tutorial/images/board_blue_led.png =200x*)
 
-Branchez votre HepiaLight et cliquez sur le boutton "Exécuter" pour executer le programme sur votre carte.
+Branchez votre HepiaLight et cliquez sur le bouton "Exécuter" pour exécuter le programme sur votre carte.
 
 # Éteindre l'écran
 
-Nous souhaitons que la lumière allumée s'éteigne au bout de 0.5s.
+Nous souhaitons que la lumière allumée s'éteigne au bout de `0.5s`.
 
-Pour cela, nous devons rajouter le composants:
+Pour cela, nous devons ajouter les composants :
 
 -   _Attente_, qui se trouve sous le la section _Délai_, configuré pour attendre `0.5s`.
 -   _Éteindre tout_, qui se trouve sous le la section _Affichage_.
 
-Les composant doivent être placés les uns après les autres:
+Les composants doivent être placés les uns après les autres :
 
 ![](tutorial/images/allumer_led_eteindre.png =400x*)
 
@@ -125,16 +125,16 @@ Les composant doivent être placés les uns après les autres:
 </xml>
 </workspace>
 
-# Faire clignoter la led
+# Faire clignoter la LED
 
 Nous aimerions maintenant faire clignoter la LED.
-En d'autres mots, nous aimerions attendre 0.5s et puis re-effectuer toutes ces étapes de manière répétée.
+En d'autres mots, nous aimerions attendre `0.5s` et  effectuer toutes ces étapes de manière répétée.
 
-Placez une copie du composant _Attente_ après les autres déjà placés, et le tous dans le composant _Pour toujours_, qui se trouve dans la section _Boucles_.
+Placez une copie du composant _Attente_ après les autres déjà placés, et le tout dans le composant _Pour toujours_, qui se trouve dans la section _Boucles_.
 
-Ce composant doit être placé soigneusement de manière à contenir à son intérieur tous ceux placés précédément.
+Ce composant doit être placé soigneusement de manière à contenir à son intérieur tous les autres.
 
-Voici l'état final:
+Voici l'état final :
 
 ![](tutorial/images/workspace_final.png =400x*)
 
@@ -176,10 +176,10 @@ Voici l'état final:
 </xml>
 </workspace>
 
-# Tester la version finale
+# Testez
 
-Executez la version final du programme sur votre HepiaLight à l'aide du boutton "Exécuter".
+Exécutez la dernière version du programme sur votre HepiaLight à l'aide du bouton "Exécuter".
 
-Votre carte doit maintenant affiché une LED qui clignote comme illustré ici:
+Votre carte doit maintenant affiché une LED qui clignote comme illustré ici :
 
 ![](tutorial/images/final_animated.gif =200x*)

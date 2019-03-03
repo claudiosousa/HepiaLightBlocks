@@ -129,7 +129,7 @@ const toolboxConfig = [
         ]
     },
     {
-        name: 'Delai',
+        name: 'Délai',
         color: TOOLBOX_COLORS.DELAY,
         blocks: ['AttendreS', 'AttendreMs']
     },

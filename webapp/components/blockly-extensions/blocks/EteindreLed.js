@@ -13,7 +13,7 @@ const EteindreLed = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(TOOLBOX_COLORS.DISPLAY);
-        this.setTooltip('Eteindre LED');
+        this.setTooltip('Éteindre LED');
         this.setHelpUrl('');
     },
     python: block => {
