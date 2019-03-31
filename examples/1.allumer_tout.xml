@@ -1,11 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_repeat_ext" id="m=k|u{06icypydYON/-A" x="248" y="94">
-    <value name="TIMES">
-      <block type="math_number" id="b+SmWAGm^`Yx1/x{BrJ)">
-        <field name="NUM">10</field>
-      </block>
-    </value>
-    <statement name="DO">
+  <block type="PourToujours" id="6RxNui@YPg?_l[JzJ[~B" x="518" y="112">
+    <statement name="instructions">
       <block type="AllumerTout" id="^hG.rtITE@geg{WOBy(d">
         <field name="color">#A2142F</field>
         <next>
@@ -45,8 +40,5 @@
         </next>
       </block>
     </statement>
-    <next>
-      <block type="EteindreTout" id="$],j^IGik;fr8.rWBWx9"></block>
-    </next>
   </block>
 </xml>
