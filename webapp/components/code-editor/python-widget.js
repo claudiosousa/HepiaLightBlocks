@@ -8,14 +8,14 @@ class PythonWidget extends HTMLElement {
             mode: 'python',
             theme: 'midnight'
         });
-        $('#python-override-modal').on('show.bs.modal', event => {
-            debugger;
-            this.displayCode(code);
-        });
+
+        $('#python-override-modal .btn-override-code').on('click', () =>
+            this.displayCode()
+        );
 
         BlocklyDesigner.instance.addChangeListener(code => {
             if (this.isClean()) {
-                this.displayCode(code);
+                this.displayCode();
             } else {
                 $('#python-override-modal').modal('show');
             }
